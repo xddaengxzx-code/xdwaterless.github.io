@@ -12,33 +12,32 @@
         body { background-color: #0d0d0d; color: #ffffff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 10px; line-height: 1.4; }
         .container { border: 2px solid #ccff00; padding: 15px; border-radius: 25px; max-width: 450px; margin: auto; background: #111; box-shadow: 0 0 25px rgba(204, 255, 0, 0.2); }
         
-        /* Logo & Header */
         .brand-logo { width: 110px; height: auto; margin-bottom: 5px; }
         h1 { color: #ccff00; letter-spacing: 1px; margin: 5px 0; font-size: 1.5em; text-transform: uppercase; }
 
-        /* Promo */
         .promo-box { background: linear-gradient(45deg, #ccff00, #99cc00); color: #000; padding: 12px; border-radius: 12px; font-weight: bold; font-size: 0.9em; margin-bottom: 15px; }
 
-        /* Price List Grid */
         .price-section { background: #1a1a1a; border-radius: 15px; border: 1px solid #333; margin-bottom: 15px; padding: 12px; }
-        .price-section h3 { color: #ccff00; margin: 0 0 12px 0; font-size: 0.9em; border-bottom: 1px solid #444; padding-bottom: 8px; }
+        .price-section h3 { color: #ccff00; margin: 0 0 12px 0; font-size: 0.85em; border-bottom: 1px solid #444; padding-bottom: 8px; text-transform: uppercase; }
         
         .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .price-card { background: #222; padding: 10px; border-radius: 10px; border: 1px solid #444; text-align: left; }
-        .price-card h4 { margin: 0 0 8px 0; font-size: 0.75em; color: #ccff00; text-align: center; background: #333; border-radius: 5px; padding: 4px; border: 1px solid #ccff00; }
+        .price-card { background: #222; padding: 10px; border-radius: 10px; border: 1px solid #444; text-align: left; display: flex; flex-direction: column; }
         
-        .p-row { display: flex; justify-content: space-between; font-size: 0.75em; margin-bottom: 6px; border-bottom: 1px solid #333; padding-bottom: 2px; }
-        .val { font-weight: bold; color: #ccff00; }
+        /* Tajuk Kategori - Tetapkan tinggi supaya seimbang */
+        .price-card h4 { margin: 0 0 10px 0; font-size: 0.65em; color: #ccff00; text-align: center; background: #333; border-radius: 5px; padding: 5px; border: 1px solid #ccff00; height: 35px; display: flex; align-items: center; justify-content: center; text-transform: uppercase; }
+        
+        /* Baris Harga - Memastikan harga selari ke kanan */
+        .p-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.7em; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+        .p-label { flex: 1; text-align: left; }
+        .p-val { font-weight: bold; color: #ccff00; min-width: 30px; text-align: right; margin-left: 5px; }
 
-        /* Highlight Combo */
-        .combo-box { margin-top: 12px; background: #ccff00; color: #000; padding: 10px; border-radius: 10px; font-size: 0.85em; font-weight: bold; box-shadow: 0 0 15px rgba(204, 255, 0, 0.4); }
+        .combo-box { margin-top: 12px; background: #ccff00; color: #000; padding: 10px; border-radius: 10px; font-size: 0.8em; font-weight: bold; box-shadow: 0 0 15px rgba(204, 255, 0, 0.4); text-transform: uppercase; }
 
         .main-poster { width: 100%; border-radius: 15px; border: 2px solid #ccff00; margin: 20px 0; }
 
-        /* WhatsApp Button */
         .wa-button { background-color: #25d366; color: white; padding: 16px; text-decoration: none; border-radius: 50px; font-weight: bold; display: block; font-size: 1.1em; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
         
-        .footer-text { font-size: 0.65em; margin-top: 25px; color: #555; }
+        .footer-text { font-size: 0.6em; margin-top: 25px; color: #555; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -46,22 +45,22 @@
         <img src="Untitled design_20251230_222907_0000.png" alt="Logo XD Waterless" class="brand-logo">
         <h1>XD WATERLESS</h1>
 
-        <div class="promo-box">🎁 PROMO: CUCI 6 KALI, FREE 1 KALI!</div>
+        <div class="promo-box">🎁 CUCI 6 KALI, FREE 1 KALI!</div>
 
         <div class="price-section">
             <h3>SENARAI HARGA SERVIS</h3>
             <div class="price-grid">
                 <div class="price-card">
-                    <h4>🚗 SEDAN / HATCH</h4>
-                    <div class="p-row"><span>Basic Wash</span><span class="val">15</span></div>
-                    <div class="p-row"><span>Nano Coat</span><span class="val">35</span></div>
-                    <div class="p-row"><span>Engine Bay</span><span class="val">45</span></div>
+                    <h4>🚗 SEDAN / HATCHBACK</h4>
+                    <div class="p-row"><span class="p-label">Basic Wash</span><span class="p-val">15</span></div>
+                    <div class="p-row"><span class="p-label">Nano Coat</span><span class="p-val">35</span></div>
+                    <div class="p-row"><span class="p-label">Engine Bay</span><span class="p-val">45</span></div>
                 </div>
                 <div class="price-card">
                     <h4>🚙 SUV / MPV</h4>
-                    <div class="p-row"><span>Basic Wash</span><span class="val">25</span></div>
-                    <div class="p-row) "><span>Nano Coat</span><span class="val">45</span></div>
-                    <div class="p-row"><span>Engine Bay</span><span class="val">55</span></div>
+                    <div class="p-row"><span class="p-label">Basic Wash</span><span class="p-val">25</span></div>
+                    <div class="p-row"><span class="p-label">Nano Coat</span><span class="p-val">45</span></div>
+                    <div class="p-row"><span class="p-label">Engine Bay</span><span class="p-val">55</span></div>
                 </div>
             </div>
             <div class="combo-box">
@@ -76,5 +75,4 @@
         <p class="footer-text">DAENGXZX LAGACY | SHAH ALAM<br>9:00 AM - 10:00 PM</p>
     </div>
 </body>
-    </html>
-    
+</html>
