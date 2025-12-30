@@ -9,7 +9,7 @@
         .container { border: 2px solid #ccff00; padding: 25px; border-radius: 25px; box-shadow: 0 0 25px rgba(204, 255, 0, 0.2); max-width: 450px; margin: auto; background: #111; }
         
         /* Gaya Logo */
-        .brand-logo { width: 120px; height: auto; margin-bottom: 10px; }
+        .brand-logo { width: 140px; height: auto; margin-bottom: 10px; border-radius: 10px; }
         
         h1 { color: #ccff00; letter-spacing: 2px; margin: 5px 0; text-transform: uppercase; font-size: 1.8em; text-shadow: 0 0 10px #ccff00; }
         .tagline { font-style: italic; color: #aaa; font-size: 0.85em; margin-bottom: 20px; }
@@ -21,6 +21,11 @@
         .usp-list { font-size: 0.8em; list-style: none; padding: 0; margin: 0; }
         .usp-list li { margin-bottom: 8px; display: flex; align-items: center; }
         .usp-list li::before { content: "✅"; margin-right: 8px; }
+
+        /* Testimoni Section */
+        .testi-section { background: #222; padding: 12px; border-radius: 15px; margin-bottom: 20px; border: 1px solid #444; }
+        .testi-card { font-style: italic; font-size: 0.8em; color: #ddd; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 5px; text-align: left; }
+        .stars { color: #ccff00; font-size: 0.9em; }
 
         .promo-box { background: linear-gradient(45deg, #ccff00, #99cc00); color: #000; margin-bottom: 20px; padding: 12px; border-radius: 12px; font-weight: bold; font-size: 0.9em; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
@@ -36,7 +41,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="Logo XD Waterless" class="brand-logo">
+        <img src="Untitled design_20251230_222907_0000.png" alt="Logo XD Waterless" class="brand-logo">
         
         <h1>XD WATERLESS</h1>
         <p class="tagline">Mobile Detailing Specialist</p>
@@ -46,11 +51,20 @@
         <div class="usp-section">
             <h3>KENAPA PILIH KAMI?</h3>
             <ul class="usp-list">
-                <li><b>Kilat Tanpa Air:</b> Sesuai di mana jua lokasi.</li>
-                <li><b>Nano Protection:</b> Perlindungan cat & kalis air.</li>
-                <li><b>Mobile Service:</b> Kami datang terus kepada anda.</li>
-                <li><b>Kualiti Dijamin:</b> Hasil kerja teliti & profesional.</li>
+                <li><b>Kilat Tanpa Air:</b> Cuci di mana saja (condo/parking).</li>
+                <li><b>Nano Protection:</b> Cat lebih terlindung & kalis air.</li>
+                <li><b>Servis Mobile:</b> Kami datang terus kepada anda.</li>
+                <li><b>Pakar Shah Alam:</b> Servis dipercayai warga setempat.</li>
             </ul>
+        </div>
+
+        <div class="testi-section">
+            <h3 style="color: #ccff00; font-size: 0.9em; margin-top: 0;">APA KATA PELANGGAN?</h3>
+            <div class="testi-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                "Kereta berkilat macam baru keluar showroom! Memang puas hati."<br>
+                <small>- Ahmad, Shah Alam</small>
+            </div>
         </div>
 
         <div class="promo-box">
@@ -69,7 +83,12 @@
             </tbody>
         </table>
 
-        <a href="https://wa.me/60167003569" class="wa-button">TEMPAH SLOT</a>
+        <div style="font-size: 0.75em; color: #aaa; margin-bottom: 20px; text-align: left;">
+            🚗 <b>Sedan/Hatchback:</b> Harga Asal<br>
+            🚙 <b>SUV/MPV/Van:</b> +RM10 - RM20
+        </div>
+
+        <a href="https://wa.me/60167003569" class="wa-button">TEMPAH SLOT SEKARANG</a>
         
         <p class="footer-text">DAENGXZX LAGACY | SHAH ALAM<br>9:00 AM - 10:00 PM</p>
     </div>
