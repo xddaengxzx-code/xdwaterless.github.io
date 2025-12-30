@@ -5,62 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XD Waterless | Premium Mobile Detailing</title>
     <style>
-        body { background-color: #0d0d0d; color: #ffffff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; line-height: 1.6; }
+        body { background-color: #0d0d0d; color: #ffffff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 15px; line-height: 1.6; }
         .container { border: 2px solid #ccff00; padding: 25px; border-radius: 25px; box-shadow: 0 0 25px rgba(204, 255, 0, 0.2); max-width: 450px; margin: auto; background: #111; }
-        h1 { color: #ccff00; letter-spacing: 3px; margin-bottom: 5px; text-transform: uppercase; text-shadow: 0 0 10px #ccff00; }
-        .tagline { font-style: italic; color: #aaa; font-size: 0.9em; margin-bottom: 25px; }
         
-        .work-img { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 2px solid #ccff00; transition: 0.3s; }
-        .work-img:hover { transform: scale(1.02); }
+        /* Gaya Logo */
+        .brand-logo { width: 120px; height: auto; margin-bottom: 10px; }
+        
+        h1 { color: #ccff00; letter-spacing: 2px; margin: 5px 0; text-transform: uppercase; font-size: 1.8em; text-shadow: 0 0 10px #ccff00; }
+        .tagline { font-style: italic; color: #aaa; font-size: 0.85em; margin-bottom: 20px; }
+        
+        .work-img { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 2px solid #ccff00; }
 
-        /* Profile & USP Section */
-        .profile-section { background: #1a1a1a; padding: 18px; border-radius: 15px; text-align: left; margin-bottom: 20px; border: 1px solid #333; }
-        .profile-section h3 { color: #ccff00; margin-top: 0; font-size: 1.1em; text-align: center; border-bottom: 1px solid #ccff00; padding-bottom: 8px; }
-        .usp-list { font-size: 0.85em; list-style: none; padding: 0; margin: 10px 0; }
+        .usp-section { background: #1a1a1a; padding: 15px; border-radius: 15px; text-align: left; margin-bottom: 20px; border: 1px solid #333; }
+        .usp-section h3 { color: #ccff00; margin: 0 0 10px 0; font-size: 1em; text-align: center; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .usp-list { font-size: 0.8em; list-style: none; padding: 0; margin: 0; }
         .usp-list li { margin-bottom: 8px; display: flex; align-items: center; }
-        .usp-list li::before { content: "✅"; margin-right: 10px; font-size: 1.1em; }
+        .usp-list li::before { content: "✅"; margin-right: 8px; }
 
-        .promo-box { background: linear-gradient(45deg, #ccff00, #99cc00); color: #000; margin-bottom: 20px; padding: 15px; border-radius: 12px; font-weight: bold; font-size: 1em; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
+        .promo-box { background: linear-gradient(45deg, #ccff00, #99cc00); color: #000; margin-bottom: 20px; padding: 12px; border-radius: 12px; font-weight: bold; font-size: 0.9em; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
 
         .price-table { width: 100%; border-collapse: collapse; background: #1a1a1a; border-radius: 15px; overflow: hidden; border: 1px solid #333; margin-bottom: 20px; }
-        .price-table th { background: #ccff00; color: #000; padding: 15px; font-size: 0.9em; }
-        .price-table td { padding: 15px 12px; border-bottom: 1px solid #333; font-size: 0.9em; text-align: left; }
-        .price-val { color: #ccff00; font-weight: bold; text-align: right; font-size: 1.1em; }
+        .price-table th { background: #ccff00; color: #000; padding: 12px; font-size: 0.85em; }
+        .price-table td { padding: 12px; border-bottom: 1px solid #333; font-size: 0.85em; text-align: left; }
+        .price-val { color: #ccff00; font-weight: bold; text-align: right; }
 
-        .wa-button { background-color: #25d366; color: white; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 10px; font-size: 1.1em; box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: 0.3s; }
-        .wa-button:hover { background-color: #1ebe57; transform: translateY(-3px); }
-        
-        .footer-text { font-size: 0.75em; margin-top: 40px; color: #555; letter-spacing: 1px; }
+        .wa-button { background-color: #25d366; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 10px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
+        .footer-text { font-size: 0.7em; margin-top: 30px; color: #555; }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="logo.png" alt="Logo XD Waterless" class="brand-logo">
+        
         <h1>XD WATERLESS</h1>
         <p class="tagline">Mobile Detailing Specialist</p>
 
         <img src="1767016706700.jpg" alt="Poster XD Waterless" class="work-img">
 
-        <div class="promo-box">
-            🔥 PROMO: CUCI 6 KALI, FREE 1 KALI! 🔥
+        <div class="usp-section">
+            <h3>KENAPA PILIH KAMI?</h3>
+            <ul class="usp-list">
+                <li><b>Kilat Tanpa Air:</b> Sesuai di mana jua lokasi.</li>
+                <li><b>Nano Protection:</b> Perlindungan cat & kalis air.</li>
+                <li><b>Mobile Service:</b> Kami datang terus kepada anda.</li>
+                <li><b>Kualiti Dijamin:</b> Hasil kerja teliti & profesional.</li>
+            </ul>
         </div>
 
-        <div class="profile-section">
-            <h3>KENAPA PILIH XD WATERLESS?</h3>
-            <ul class="usp-list">
-                <li><b>Kilat Tanpa Air:</b> Cuci di mana saja tanpa basah.</li>
-                <li><b>Nano Protection:</b> Cat lebih terlindung & kalis air.</li>
-                <li><b>Jimat Masa:</b> Kami datang ke rumah/pejabat anda.</li>
-                <li><b>Kualiti Padu:</b> Servis teliti dari Daengzx Lagacy.</li>
-            </ul>
+        <div class="promo-box">
+            🎁 PROMO: CUCI 6 KALI, FREE 1 KALI!
         </div>
 
         <table class="price-table">
             <thead>
-                <tr>
-                    <th>PAKEJ SERVIS</th>
-                    <th>RM</th>
-                </tr>
+                <tr><th>PAKEJ SERVIS</th><th>RM</th></tr>
             </thead>
             <tbody>
                 <tr><td>✨ <b>BASIC WASH</b></td><td class="price-val">15</td></tr>
@@ -70,15 +69,9 @@
             </tbody>
         </table>
 
-        <div style="font-size: 0.8em; color: #aaa; margin-bottom: 20px;">
-            🚗 <b>Sedan/Hatchback:</b> Harga Asal<br>
-            🚙 <b>SUV/MPV/Van:</b> +RM10 - RM20
-        </div>
-
-        <a href="https://wa.me/60167003569" class="wa-button">BOOK SLOT SEKARANG</a>
+        <a href="https://wa.me/60167003569" class="wa-button">TEMPAH SLOT</a>
         
         <p class="footer-text">DAENGXZX LAGACY | SHAH ALAM<br>9:00 AM - 10:00 PM</p>
     </div>
 </body>
-                    </html>
-    
+</html>
