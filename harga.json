@@ -1,0 +1,14 @@
+{
+  "promo": "🎁 CUCI 6 KALI, FREE 1 KALI!",
+  "sedan": {
+    "basic": "15",
+    "nano": "35",
+    "engine": "45"
+  },
+  "suv": {
+    "basic": "25",
+    "nano": "45",
+    "engine": "55"
+  },
+  "combo": "85"
+}
