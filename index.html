@@ -5,78 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XD Waterless | Premium Mobile Detailing</title>
     <style>
-        body { background-color: #0d0d0d; color: #ffffff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 15px; line-height: 1.6; }
-        .container { border: 2px solid #ccff00; padding: 25px; border-radius: 25px; box-shadow: 0 0 25px rgba(204, 255, 0, 0.2); max-width: 450px; margin: auto; background: #111; }
+        body { background-color: #0d0d0d; color: #ffffff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 10px; line-height: 1.4; }
+        .container { border: 2px solid #ccff00; padding: 15px; border-radius: 20px; max-width: 450px; margin: auto; background: #111; }
         
-        /* 1. Logo & Header */
-        .brand-logo { width: 140px; height: auto; margin-bottom: 10px; border-radius: 10px; }
-        h1 { color: #ccff00; letter-spacing: 2px; margin: 5px 0; text-transform: uppercase; font-size: 1.8em; text-shadow: 0 0 10px #ccff00; }
-        .tagline { font-style: italic; color: #aaa; font-size: 0.85em; margin-bottom: 20px; }
+        .brand-logo { width: 100px; height: auto; margin-bottom: 5px; }
+        h1 { color: #ccff00; letter-spacing: 1px; margin: 5px 0; font-size: 1.4em; }
+
+        /* SUSUNAN KE TEPI (GRID) */
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
         
-        /* 2. Promo Box */
-        .promo-box { background: linear-gradient(45deg, #ccff00, #99cc00); color: #000; margin-bottom: 20px; padding: 12px; border-radius: 12px; font-weight: bold; font-size: 1em; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
-
-        /* 3. Main Poster */
-        .work-img { width: 100%; border-radius: 15px; margin-bottom: 20px; border: 2px solid #ccff00; }
-
-        /* 4. USP / Social Proof */
-        .usp-section { background: #1a1a1a; padding: 15px; border-radius: 15px; text-align: left; margin-bottom: 20px; border: 1px solid #333; }
-        .usp-section h3 { color: #ccff00; margin: 0 0 10px 0; font-size: 1em; text-align: center; border-bottom: 1px solid #333; padding-bottom: 5px; }
-        .usp-list { font-size: 0.85em; list-style: none; padding: 0; margin: 0; }
-        .usp-list li { margin-bottom: 8px; display: flex; align-items: center; }
-        .usp-list li::before { content: "✅"; margin-right: 10px; }
-
-        /* 5. Pricing Table */
-        .price-table { width: 100%; border-collapse: collapse; background: #1a1a1a; border-radius: 15px; overflow: hidden; border: 1px solid #333; margin-bottom: 20px; }
-        .price-table th { background: #ccff00; color: #000; padding: 12px; font-size: 0.85em; }
-        .price-table td { padding: 12px; border-bottom: 1px solid #333; font-size: 0.85em; text-align: left; }
-        .price-val { color: #ccff00; font-weight: bold; text-align: right; }
-
-        /* 6. WhatsApp Button */
-        .wa-button { background-color: #25d366; color: white; padding: 16px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 10px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); font-size: 1.1em; }
+        .grid-box { background: #1a1a1a; padding: 10px; border-radius: 12px; border: 1px solid #333; font-size: 0.75em; text-align: left; }
+        .grid-box h3 { color: #ccff00; margin-top: 0; font-size: 0.85em; text-align: center; border-bottom: 1px solid #333; padding-bottom: 5px; }
         
-        .footer-text { font-size: 0.7em; margin-top: 30px; color: #555; }
+        .price-item { display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px dashed #444; padding-bottom: 2px; }
+        .price-val { color: #ccff00; font-weight: bold; }
+
+        .work-img { width: 100%; border-radius: 12px; border: 1.5px solid #ccff00; margin-bottom: 15px; }
+
+        .promo-box { background: linear-gradient(45deg, #ccff00, #99cc00); color: #000; padding: 10px; border-radius: 10px; font-weight: bold; font-size: 0.85em; margin-bottom: 15px; }
+
+        .wa-button { background-color: #25d366; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: block; font-size: 0.95em; }
+        
+        .footer-text { font-size: 0.65em; margin-top: 20px; color: #555; }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="Untitled design_20251230_222907_0000.png" alt="Logo XD Waterless" class="brand-logo">
         <h1>XD WATERLESS</h1>
-        <p class="tagline">Mobile Detailing Specialist</p>
 
-        <div class="promo-box">
-            🎁 PROMO: CUCI 6 KALI, FREE 1 KALI!
+        <div class="promo-box">🎁 CUCI 6 KALI, FREE 1 KALI!</div>
+
+        <div class="grid-container">
+            <div class="grid-box">
+                <h3>HARGA (RM)</h3>
+                <div class="price-item"><span>Basic</span><span class="price-val">15</span></div>
+                <div class="price-item"><span>Nano</span><span class="price-val">35</span></div>
+                <div class="price-item"><span>Engine</span><span class="price-val">45</span></div>
+                <div class="price-item"><span>Combo</span><span class="price-val">85</span></div>
+            </div>
+
+            <div class="grid-box">
+                <h3>KELEBIHAN</h3>
+                <div style="font-size: 0.9em; line-height: 1.2;">
+                    ✅ Tanpa Air<br>
+                    ✅ Nano Coat<br>
+                    ✅ Mobile Servis<br>
+                    ✅ Area Shah Alam
+                </div>
+            </div>
         </div>
 
         <img src="1767016706700.jpg" alt="Poster XD Waterless" class="work-img">
 
-        <div class="usp-section">
-            <h3>KENAPA PILIH KAMI?</h3>
-            <ul class="usp-list">
-                <li><b>Kilat Tanpa Air:</b> Sesuai di mana jua lokasi anda.</li>
-                <li><b>Nano Protection:</b> Perlindungan cat & kalis air.</li>
-                <li><b>Servis Mobile:</b> Kami datang terus kepada anda.</li>
-                <li><b>Pakar Shah Alam:</b> Servis dipercayai warga setempat.</li>
-            </ul>
-        </div>
-
-        <table class="price-table">
-            <thead>
-                <tr><th>PAKEJ SERVIS</th><th>RM</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>✨ <b>BASIC WASH</b></td><td class="price-val">15</td></tr>
-                <tr><td>🛡️ <b>NANO COATING</b></td><td class="price-val">35</td></tr>
-                <tr><td>⚙️ <b>ENGINE BAY CLEAN</b></td><td class="price-val">45</td></tr>
-                <tr><td>🔥 <b>COMBO DETAILING</b></td><td class="price-val">85</td></tr>
-            </tbody>
-        </table>
-
         <a href="https://wa.me/60167003569?text=Saya%20berminat%20nak%20tempah%20slot%20XD%20Waterless" class="wa-button">TEMPAH SLOT SEKARANG</a>
         
-        <p class="footer-text">DAENGXZX LAGACY | SHAH ALAM<br>9:00 AM - 10:00 PM</p>
+        <p class="footer-text">DAENGXZX LAGACY | SHAH ALAM</p>
     </div>
 </body>
-    </html>
-    
+</html>
