@@ -89,7 +89,11 @@
 
         <div class="price-section">
             <h3>BERI RATING & REVIEW</h3>
-            <form action="https://formspree.io/f/your-id" method="POST" style="text-align:left;">
+            <form action="https://api.web3forms.com/submit" method="POST" style="text-align:left;">
+                
+                <input type="hidden" name="access_key" value="5c571cbb-16d9-4509-a731-d5526f8c7924">
+                <input type="hidden" name="from_name" value="XD Waterless Review">
+
                 <label>Rating Servis:</label>
                 <select name="rating">
                     <option value="5">⭐⭐⭐⭐⭐ (Sangat Puas)</option>
@@ -103,6 +107,8 @@
                 <label>Komen Review:</label>
                 <textarea name="message" required placeholder="Tulis pengalaman anda..."></textarea>
 
+                <input type="hidden" name="redirect" value="https://xddaengxzx-code.github.io/xdwaterless">
+
                 <button type="submit" style="background:#ccff00; color:#000; border:none; padding:15px; border-radius:50px; width:100%; font-weight:bold; cursor:pointer; text-transform:uppercase; margin-top:10px;">Hantar Review</button>
             </form>
         </div>
@@ -114,7 +120,6 @@
     </div>
 
     <script>
-        // Tarik data secara dinamik dari harga.json
         fetch('harga.json')
             .then(response => response.json())
             .then(data => {
