@@ -1,4 +1,5 @@
 {
+  "promo": "🎁 CUCI 6 KALI, FREE 1 KALI!",
   "sedan": {
     "basic": "15",
     "nano": "35",
@@ -12,16 +13,16 @@
   "combo": "85",
   "info": [
     {
-      "tajuk": "KERETA KEKAL BERKILAT",
-      "huraian": "Hasil cucian yang lebih bersinar dan nampak macam baru."
+      "tajuk": "HASIL KILAT MACAM BARU",
+      "huraian": "Teknologi kami buat kereta anda bersinar lebih lama."
     },
     {
-      "tajuk": "CUCI DI MANA SAHAJA",
-      "huraian": "Tak perlu keluar rumah, kami datang terus ke tempat anda."
+      "tajuk": "KAMI DATANG KE TEMPAT ANDA",
+      "huraian": "Tak perlu keluar rumah, jimat masa dan tenaga anda."
     },
     {
-      "tajuk": "SIAP DENGAN WAX",
-      "huraian": "Setiap cucian disertakan dengan pelindung cat agar tahan lama."
+      "tajuk": "SIAP DENGAN PERLINDUNGAN WAX",
+      "huraian": "Cat kereta dilindungi daripada panas matahari & hujan."
     }
   ]
 }
