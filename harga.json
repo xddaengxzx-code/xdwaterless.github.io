@@ -1,28 +1,20 @@
 {
-  "promo": "🔥 PROMO GAJI 🔥<br><span style='font-size: 0.8em;'>DISKAUN RM5 UNTUK 5 SLOT PERTAMA!</span>",
-  "sedan": {
-    "basic": "15",
-    "nano": "35",
-    "engine": "45"
-  },
-  "suv": {
-    "basic": "25",
-    "nano": "45",
-    "engine": "55"
-  },
+  "promo_msg": "DISKAUN RM5 UNTUK 5 SLOT PERTAMA HARI INI SAHAJA!",
+  "sedan": { "basic": "15", "nano": "35", "engine": "45" },
+  "suv": { "basic": "25", "nano": "45", "engine": "55" },
   "combo": "85",
   "info": [
     {
-      "tajuk": "HASIL KILAT MACAM BARU",
-      "huraian": "Teknologi polimer kami buat kereta anda bersinar lebih lama dan nampak basah (wet look)."
+      "tajuk": "🛡️ CAT KEKAL SELAMAT",
+      "huraian": "Kami guna cairan khas yang mengangkat kotoran tanpa menggores cat kereta anda."
     },
     {
-      "tajuk": "KAMI DATANG KE TEMPAT ANDA",
-      "huraian": "Tak perlu keluar rumah atau beratur di carwash. Kami cuci di parking anda sahaja."
+      "tajuk": "💎 KILATAN PREMIUM (WAX)",
+      "huraian": "Setiap cucian akan meninggalkan lapisan Wax yang buat kereta nampak berkilat macam baru keluar showroom."
     },
     {
-      "tajuk": "SIAP DENGAN PERLINDUNGAN WAX",
-      "huraian": "Setiap cucian disertakan lapisan wax untuk lindungi cat daripada panas matahari."
+      "tajuk": "📍 SERVIS MOBILE (SHAH ALAM)",
+      "huraian": "Tak perlu bazir masa beratur. Kami datang cuci di rumah atau tempat kerja anda."
     }
   ]
 }
