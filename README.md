@@ -1,6 +1,6 @@
-# 🚗 XD Waterless - Premium Mobile Detailing Web App
+# 🚗 XD WATERLESS - Premium Mobile Detailing Web App
 
-Selamat datang ke laman web rasmi **XD Waterless**, aplikasi tempahan servis cucian kereta tanpa air (waterless) premium yang beroperasi terus ke lokasi anda.
+Selamat datang ke laman web rasmi **XD WATERLESS**, aplikasi tempahan servis cucian kereta tanpa air premium yang beroperasi terus ke lokasi anda.
 
 ## 🌟 Ciri-Ciri Utama
 * **Responsive Design**: Paparan yang cantik dan kemas untuk telefon pintar, tablet, dan komputer (Windows/Mac).
@@ -28,6 +28,5 @@ Selamat datang ke laman web rasmi **XD Waterless**, aplikasi tempahan servis cuc
 5.  Tekan butang **Confirm & Book Now** untuk menghantar tempahan melalui WhatsApp.
 
 ---
-**Dikuasakan oleh:** [Daengxzx Legacy](https://github.com/daengxzx)  
+**Dikuasakan oleh:** XD DAENGXZX LAGACY  
 **Lokasi Servis:** Shah Alam & Kawasan Sekitar.
-
