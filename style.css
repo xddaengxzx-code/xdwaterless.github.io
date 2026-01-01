@@ -60,9 +60,10 @@ h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 0.85; text-transform: upp
 .total-price { font-size: 3rem; font-weight: 900; color: var(--neon); margin-bottom: 25px; }
 .btn-confirm { background: var(--neon); color: black; padding: 20px; width: 100%; border: none; border-radius: 15px; font-weight: 900; text-transform: uppercase; cursor: pointer; }
 
-/* REVIEW CSS */
-.review-container { display: flex; flex-direction: column; gap: 15px; }
-.review-card { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); padding: 20px; border-radius: 15px; border-left: 4px solid var(--neon); }
-.stars { color: var(--neon); margin-bottom: 5px; }
-.review-card p { font-style: italic; font-size: 0.9rem; margin: 10px 0; }
-.review-card small { color: var(--neon); font-weight: bold; }
+/* KOTAK KOMEN JADI PUTIH SUPAYA FB COMMENTS JELAS */
+.comment-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
