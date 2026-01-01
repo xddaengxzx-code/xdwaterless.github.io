@@ -6,18 +6,20 @@
     <title>XD Waterless | Premium Mobile Detailing</title>
     <style>
         body { background-image: linear-gradient(rgba(13,13,13,0.92), rgba(13,13,13,0.92)), url('Untitled design_20251230_222907_0000.png'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: contain; background-color: #0d0d0d; color: #ffffff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 10px; margin: 0; }
-        .container { border: 2px solid #ccff00; padding: 20px; border-radius: 30px; max-width: 450px; margin: 20px auto; background: rgba(17,17,17,0.85); box-shadow: 0 0 30px rgba(204,255,0,0.15); backdrop-filter: blur(8px); }
-        .brand-logo { width: 120px; height: auto; margin-bottom: 10px; }
-        h1 { color: #ccff00; letter-spacing: 2px; margin: 5px 0; font-size: 1.5em; text-transform: uppercase; font-weight: 800; }
+        .container { border: 2px solid #ccff00; padding: 20px; border-radius: 30px; max-width: 450px; margin: 20px auto; background: rgba(17, 17, 17, 0.85); box-shadow: 0 0 30px rgba(204,255,0,0.15); backdrop-filter: blur(8px); }
+        .brand-logo { width: 110px; height: auto; margin-bottom: 10px; }
+        h1 { color: #ccff00; letter-spacing: 2px; margin: 5px 0; font-size: 1.4em; text-transform: uppercase; font-weight: 800; }
+        .promo-banner { background: #ccff00; color: #000; padding: 12px; border-radius: 15px; font-weight: bold; font-size: 0.9em; margin-bottom: 20px; text-transform: uppercase; display: block; }
         .price-section { background: rgba(30,30,30,0.6); border-radius: 20px; border: 1px solid #333; margin-bottom: 20px; padding: 15px; }
-        .price-section h3 { color: #ccff00; margin: 0 0 15px 0; font-size: 0.85em; border-bottom: 1px solid #444; padding-bottom: 10px; text-transform: uppercase; }
+        .price-section h3 { color: #ccff00; margin: 0 0 15px 0; font-size: 0.8em; border-bottom: 1px solid #444; padding-bottom: 10px; text-transform: uppercase; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .card { background: #111; padding: 12px; border-radius: 15px; border: 1px solid #444; text-align: left; }
-        .card h4 { margin: 0 0 10px 0; font-size: 0.7em; color: #ccff00; text-align: center; background: #222; border-radius: 8px; padding: 6px; border: 1px solid #ccff00; text-transform: uppercase; }
+        .card h4 { margin: 0 0 10px 0; font-size: 0.65em; color: #ccff00; text-align: center; background: #222; border-radius: 8px; padding: 6px; border: 1px solid #ccff00; text-transform: uppercase; }
         .p-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.75em; margin-bottom: 8px; border-bottom: 1px solid #222; padding-bottom: 4px; }
         .p-val { font-weight: bold; color: #ccff00; }
-        .info-card { background: #222; padding: 12px; border-radius: 12px; border-left: 4px solid #ccff00; margin-bottom: 10px; text-align: left; }
-        .wa-button { background: #25d366; color: white; padding: 16px; text-decoration: none; border-radius: 50px; font-weight: bold; display: block; font-size: 1em; margin-top: 15px; }
+        .combo-bar { background: #ccff00; color: #000; padding: 12px; border-radius: 15px; font-weight: bold; font-size: 0.9em; margin-top: 15px; text-transform: uppercase; }
+        .info-card { background: #222; padding: 12px; border-radius: 15px; border-left: 4px solid #ccff00; margin-bottom: 10px; text-align: left; }
+        .wa-button { background: #25d366; color: white; padding: 16px; text-decoration: none; border-radius: 50px; font-weight: bold; display: block; font-size: 1.1em; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -25,46 +27,49 @@
         <img src="Untitled design_20251230_222907_0000.png" class="brand-logo">
         <h1>XD WATERLESS</h1>
         
+        <div id="promo-display" class="promo-banner">MEMUATKAN PROMO...</div>
+        
         <div class="price-section">
-            <h3>PAKEJ CUCIAN</h3>
+            <h3>SENARAI HARGA SERVIS</h3>
             <div class="grid-2">
                 <div class="card">
-                    <h4>🚗 SEDAN</h4>
-                    <div class="p-row"><span>Basic</span><span id="s-basic" class="p-val">-</span></div>
-                    <div class="p-row"><span>Nano</span><span id="s-nano" class="p-val">-</span></div>
+                    <h4>🚗 SEDAN / HATCH</h4>
+                    <div class="p-row"><span>Basic Wash</span><span id="s-basic" class="p-val"></span></div>
+                    <div class="p-row"><span>Nano Coat</span><span id="s-nano" class="p-val"></span></div>
+                    <div class="p-row"><span>Engine Bay</span><span id="s-engine" class="p-val"></span></div>
                 </div>
                 <div class="card">
-                    <h4>🚙 SUV/MPV</h4>
-                    <div class="p-row"><span>Basic</span><span id="m-basic" class="p-val">-</span></div>
-                    <div class="p-row"><span>Nano</span><span id="m-nano" class="p-val">-</span></div>
+                    <h4>🚙 SUV / MPV</h4>
+                    <div class="p-row"><span>Basic Wash</span><span id="m-basic" class="p-val"></span></div>
+                    <div class="p-row"><span>Nano Coat</span><span id="m-nano" class="p-val"></span></div>
+                    <div class="p-row"><span>Engine Bay</span><span id="m-engine" class="p-val"></span></div>
                 </div>
             </div>
+            <div id="combo-container" class="combo-bar">🔥 COMBO: RM <span id="combo-val"></span> 🔥</div>
         </div>
 
         <div id="penerangan-section"></div>
 
-        <a href="https://wa.me/60167003569" class="wa-button">TEMPAH SEKARANG</a>
-        <p style="font-size:0.6em; color:#666; margin-top:20px;">SHAH ALAM | 9AM - 9PM</p>
+        <a href="https://wa.me/60167003569?text=Saya%20nak%20booking%20slot" class="wa-button">TEMPAH SEKARANG</a>
+        <p style="font-size:0.6em; color:#666; margin-top:20px;">DAENGXZX LEGACY | SHAH ALAM</p>
     </div>
 
     <script>
         fetch('harga.json')
             .then(res => res.json())
             .then(data => {
-                // Set Harga
+                document.getElementById('promo-display').innerText = data.promo || "🎁 PROMO SEDANG BERJALAN!";
                 document.getElementById('s-basic').innerText = data.sedan.basic;
                 document.getElementById('s-nano').innerText = data.sedan.nano;
+                document.getElementById('s-engine').innerText = data.sedan.engine;
                 document.getElementById('m-basic').innerText = data.suv.basic;
                 document.getElementById('m-nano').innerText = data.suv.nano;
+                document.getElementById('m-engine').innerText = data.suv.engine;
+                document.getElementById('combo-val').innerText = data.combo;
 
-                // Set Kotak Penerangan Secara Automatik
                 let infoHtml = `<div class="price-section"><h3>KEBAIKAN WATERLESS</h3>`;
                 data.info.forEach(item => {
-                    infoHtml += `
-                        <div class="info-card">
-                            <b style="color:#ccff00; font-size:0.8em;">${item.tajuk}</b><br>
-                            <span style="font-size:0.75em; color:#ccc;">${item.huraian}</span>
-                        </div>`;
+                    infoHtml += `<div class="info-card"><b style="color:#ccff00;font-size:0.8em;">${item.tajuk}</b><br><span style="font-size:0.7em;color:#ccc;">${item.huraian}</span></div>`;
                 });
                 infoHtml += `</div>`;
                 document.getElementById('penerangan-section').innerHTML = infoHtml;
