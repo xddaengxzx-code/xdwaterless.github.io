@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XD Waterless | Premium Mobile Detailing</title>
+    
     <style>
-        /* --- KOD ASAL ANDA --- */
         body { background-color: #0d0d0d; color: #ffffff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 10px; line-height: 1.4; }
         .container { border: 2px solid #ccff00; padding: 15px; border-radius: 25px; max-width: 450px; margin: auto; background: #111; box-shadow: 0 0 25px rgba(204, 255, 0, 0.2); }
         .brand-logo { width: 110px; height: auto; margin-bottom: 5px; }
         h1 { color: #ccff00; letter-spacing: 1px; margin: 5px 0; font-size: 1.5em; text-transform: uppercase; }
         .promo-box { background: linear-gradient(45deg, #ccff00, #99cc00); color: #000; padding: 12px; border-radius: 12px; font-weight: bold; font-size: 0.9em; margin-bottom: 15px; }
+        
         .price-section { background: #1a1a1a; border-radius: 15px; border: 1px solid #333; margin-bottom: 15px; padding: 15px; }
         .price-section h3 { color: #ccff00; margin: 0 0 12px 0; font-size: 0.85em; border-bottom: 1px solid #444; padding-bottom: 8px; text-transform: uppercase; }
+        
         .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .price-card { background: #222; padding: 10px; border-radius: 10px; border: 1px solid #444; text-align: left; }
-        .p-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.72em; margin-bottom: 8px; }
-        .p-val { font-weight: bold; color: #ccff00; }
-        .wa-button { background-color: #25d366; color: white; padding: 16px; text-decoration: none; border-radius: 50px; font-weight: bold; display: block; margin-bottom: 10px; }
-        .footer-text { font-size: 0.6em; margin-top: 25px; color: #555; }
+        .price-card h4 { margin: 0 0 10px 0; font-size: 0.65em; color: #ccff00; text-align: center; background: #333; border-radius: 5px; padding: 5px; border: 1px solid #ccff00; height: 35px; display: flex; align-items: center; justify-content: center; }
+        
+        .p-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.72em; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+        .p-val { font-weight: bold; color: #ccff00; min-width: 30px; text-align: right; }
+        .combo-box { margin-top: 12px; background: #ccff00; color: #000; padding: 10px; border-radius: 10px; font-size: 0.8em; font-weight: bold; text-transform: uppercase; }
 
-        /* --- KOD POP-UP PROMO (BARU) --- */
+        .wa-button { background-color: #25d366; color: white; padding: 16px; text-decoration: none; border-radius: 50px; font-weight: bold; display: block; font-size: 1.1em; box-shadow: 0 4px 15px rgba(37,211,102,0.4); margin-bottom: 10px; }
+        .footer-text { font-size: 0.6em; margin-top: 25px; color: #555; text-transform: uppercase; }
+
+        /* POP-UP STYLES */
         #promoPopup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 85%; max-width: 350px; background: #ccff00; color: #000; padding: 20px; border-radius: 20px; box-shadow: 0 0 50px rgba(204, 255, 0, 0.5); z-index: 9999; text-align: center; }
         .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9998; }
         .close-btn { background: #000; color: #fff; padding: 5px 15px; border-radius: 50px; cursor: pointer; font-size: 0.7em; margin-top: 15px; display: inline-block; }
@@ -43,40 +49,58 @@
     <div class="container">
         <img src="Untitled design_20251230_222907_0000.png" class="brand-logo">
         <h1>XD WATERLESS</h1>
+
         <div id="promo" class="promo-box">Memuatkan promo...</div>
 
         <div class="price-section">
-            <h3>SENARAI HARGA</h3>
+            <h3>SENARAI HARGA SERVIS</h3>
             <div class="price-grid">
                 <div class="price-card">
-                    <div class="p-row"><span>Sedan Basic</span><span id="s-basic" class="p-val">-</span></div>
+                    <h4>🚗 SEDAN / HATCH</h4>
+                    <div class="p-row"><span>Basic Wash</span><span id="s-basic" class="p-val">-</span></div>
+                    <div class="p-row"><span>Nano Coat</span><span id="s-nano" class="p-val">-</span></div>
+                    <div class="p-row"><span>Engine Bay</span><span id="s-engine" class="p-val">-</span></div>
                 </div>
                 <div class="price-card">
-                    <div class="p-row"><span>SUV Basic</span><span id="m-basic" class="p-val">-</span></div>
+                    <h4>🚙 SUV / MPV</h4>
+                    <div class="p-row"><span>Basic Wash</span><span id="m-basic" class="p-val">-</span></div>
+                    <div class="p-row"><span>Nano Coat</span><span id="m-nano" class="p-val">-</span></div>
+                    <div class="p-row"><span>Engine Bay</span><span id="m-engine" class="p-val">-</span></div>
                 </div>
             </div>
+            <div class="combo-box">🔥 COMBO DETAILING: RM <span id="combo-val">-</span> 🔥</div>
         </div>
 
         <div class="price-section">
-            <h3>HANTAR REVIEW</h3>
-            <a href="https://wa.me/60167003569?text=Review: " style="background:#ccff00; color:#000; text-decoration:none; padding:12px; border-radius:50px; display:block; font-weight:bold;">✍️ WHATSAPP REVIEW</a>
+            <h3>BERI RATING & REVIEW</h3>
+            <a href="https://wa.me/60167003569?text=Assalam%20XD%20Waterless,%20saya%20nak%20beri%20review" 
+               style="background:#ccff00; color:#000; text-decoration:none; padding:12px; border-radius:50px; display:block; font-weight:bold; font-size:0.8em;">
+               ✍️ HANTAR REVIEW VIA WHATSAPP
+            </a>
         </div>
 
-        <a href="https://wa.me/60167003569" class="wa-button">TEMPAH SLOT SEKARANG</a>
+        <a href="https://wa.me/60167003569?text=Assalam%20XD%20Waterless,%20saya%20nak%20booking%20slot" class="wa-button">TEMPAH SLOT SEKARANG</a>
+        
         <p class="footer-text">DAENGXZX LEGACY | SHAH ALAM<br>9:00 AM - 9:00 PM</p>
     </div>
 
     <script>
-        // Ambil data harga
+        // Load data dari harga.json
         fetch('harga.json')
-            .then(res => res.json())
+            .then(response => response.json())
             .then(data => {
                 document.getElementById('promo').innerText = data.promo;
                 document.getElementById('s-basic').innerText = data.sedan.basic;
+                document.getElementById('s-nano').innerText = data.sedan.nano;
+                document.getElementById('s-engine').innerText = data.sedan.engine;
                 document.getElementById('m-basic').innerText = data.suv.basic;
-            });
+                document.getElementById('m-nano').innerText = data.suv.nano;
+                document.getElementById('m-engine').innerText = data.suv.engine;
+                document.getElementById('combo-val').innerText = data.combo;
+            })
+            .catch(err => console.error("Ralat JSON:", err));
 
-        // Popup muncul selepas 2 saat
+        // Pop-up muncul selepas 2 saat
         setTimeout(function() {
             document.getElementById('promoPopup').style.display = 'block';
             document.getElementById('overlay').style.display = 'block';
