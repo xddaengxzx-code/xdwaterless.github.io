@@ -3,211 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless | Mobile & Desktop App</title>
-    <style>
-        :root { --neon: #ccff00; --dark: #0a0a0a; --grey: #1a1a1a; --card-bg: #111; }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body { 
-            background: var(--dark); 
-            color: white; 
-            font-family: 'Inter', -apple-system, sans-serif; 
-            line-height: 1.6;
-        }
-
-        /* CONTAINER UTAMA - Responsif */
-        .app-container {
-            width: 100%;
-            max-width: 1200px; /* Lebar maksimum untuk skrin laptop */
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .header { 
-            text-align: left; 
-            margin-bottom: 40px; 
-            border-left: 6px solid var(--neon); 
-            padding-left: 20px; 
-        }
-        
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; line-height: 0.85; font-weight: 900; }
-        .step-label { color: var(--neon); font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; display: block; }
-
-        /* GRID UNTUK DESKTOP (Side-by-Side) */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 1fr; /* Default mobile: 1 column */
-            gap: 40px;
-        }
-
-        /* Apabila skrin lebih besar daripada 992px (Laptop/Windows) */
-        @media (min-width: 992px) {
-            .main-layout {
-                grid-template-columns: 1fr 1fr; /* Pecah 2 column: Kiri pilih servis, Kanan summary */
-            }
-        }
-
-        /* OPERATION CARDS */
-        .vehicle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
-        .op-card { 
-            background: var(--card-bg); border: 2px solid #333; padding: 30px; border-radius: 15px; 
-            text-align: center; cursor: pointer; transition: all 0.3s ease;
-        }
-        .op-card:hover { border-color: #555; }
-        .op-card.active { border-color: var(--neon); background: rgba(204,255,0,0.1); box-shadow: 0 0 30px rgba(204,255,0,0.15); }
-        .op-card span { font-size: 2.5rem; display: block; margin-bottom: 10px; }
-
-        /* SERVICE LIST */
-        .service-list { background: var(--card-bg); border-radius: 20px; border: 1px solid #222; overflow: hidden; }
-        .service-item { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px; border-bottom: 1px solid #222; cursor: pointer; transition: 0.2s;
-        }
-        .service-item:hover { background: #1a1a1a; }
-        .service-item.selected { background: rgba(255,255,255,0.03); }
-        
-        .checkbox { width: 28px; height: 28px; border: 2px solid #444; border-radius: 8px; position: relative; transition: 0.3s; }
-        .service-item.selected .checkbox { background: var(--neon); border-color: var(--neon); transform: scale(1.1); }
-        .service-item.selected .checkbox::after { content: '✓'; color: black; position: absolute; left: 5px; top: -1px; font-weight: 900; font-size: 1.1rem; }
-
-        /* SUMMARY / ACTION BAR (Untuk Desktop dia melekat kat tepi, Untuk Mobile dia kat bawah) */
-        .summary-panel {
-            background: #111; padding: 30px; border-radius: 20px; border: 2px solid var(--neon);
-            height: fit-content; position: sticky; top: 20px;
-        }
-
-        .total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .total-price { font-size: 2rem; font-weight: 900; }
-        .total-price span { color: var(--neon); }
-
-        .btn-confirm { 
-            background: var(--neon); color: black; padding: 20px; width: 100%;
-            border-radius: 12px; text-decoration: none; font-weight: 900; 
-            text-transform: uppercase; display: block; text-align: center;
-            font-size: 1.2rem; transition: 0.3s; box-shadow: 0 10px 20px rgba(204,255,0,0.2);
-        }
-        .btn-confirm:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(204,255,0,0.3); }
-
-        /* FOOTER */
-        .footer-info { margin-top: 50px; color: #555; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
-
-    </style>
+    <title>XD Waterless | Elite Detailing App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="app-container">
-        <div class="header">
-            <span class="step-label">Professional Detailing Hub</span>
-            <h1>XD<br><span style="color:var(--neon)">WATERLESS</span></h1>
-        </div>
-
-        <div class="main-layout">
-            <div class="selection-area">
-                <span class="step-label">1. Jenis Kenderaan</span>
-                <div class="vehicle-grid">
-                    <div class="op-card active" onclick="selectVehicle('Sedan', this)">
-                        <span>🚗</span>SEDAN
-                    </div>
-                    <div class="op-card" onclick="selectVehicle('SUV/MPV', this)">
-                        <span>🚙</span>SUV / MPV
-                    </div>
-                </div>
-
-                <span class="step-label">2. Pilih Operasi Servis</span>
-                <div class="service-list">
-                    <div class="service-item" onclick="toggleService('Basic Wash', 15, this)">
-                        <div><b>Basic Wash</b><br><small style="color:#777">Cuci luar & vakum dalam</small></div>
-                        <div style="display:flex; align-items:center; gap:15px;">
-                            <span style="color:var(--neon); font-weight:bold;">RM15</span>
-                            <div class="checkbox"></div>
-                        </div>
-                    </div>
-                    <div class="service-item" onclick="toggleService('Nano Coating', 35, this)">
-                        <div><b>Nano Coating</b><br><small style="color:#777">Lapisan perlindungan kilat</small></div>
-                        <div style="display:flex; align-items:center; gap:15px;">
-                            <span style="color:var(--neon); font-weight:bold;">RM35</span>
-                            <div class="checkbox"></div>
-                        </div>
-                    </div>
-                    <div class="service-item" onclick="toggleService('Engine Detailing', 45, this)">
-                        <div><b>Engine Detailing</b><br><small style="color:#777">Cuci rapi ruang enjin</small></div>
-                        <div style="display:flex; align-items:center; gap:15px;">
-                            <span style="color:var(--neon); font-weight:bold;">RM45</span>
-                            <div class="checkbox"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="action-area">
-                <div class="summary-panel">
-                    <span class="step-label" style="color:#fff">Order Summary</span>
-                    <div id="order-details" style="margin: 20px 0; color: #aaa; font-size: 0.95rem;">
-                        Sila pilih servis untuk mulakan...
-                    </div>
-                    <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
-                    <div class="total-row">
-                        <div class="total-price">TOTAL: <span id="displayTotal">RM 0</span></div>
-                    </div>
-                    <a href="#" class="btn-confirm" onclick="sendWhatsApp()">Confirm Booking</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-info">
-            Daengxzx Legacy | Mobile Detailing Specialist | Shah Alam
-        </div>
+<div class="app-container">
+    <div class="promo-banner">
+        🔥 PROMO: 6 KALI CUCI, 1 KALI FREE! 🔥
     </div>
 
-    <script>
-        let selectedVehicle = 'Sedan';
-        let selectedServices = [];
-        let totalPrice = 0;
+    <header class="header">
+        <span class="step-label">Professional Mobile Detailing</span>
+        <h1>XD<br><span style="color:var(--neon)">WATERLESS</span></h1>
+    </header>
 
-        function selectVehicle(type, el) {
-            selectedVehicle = type;
-            document.querySelectorAll('.op-card').forEach(card => card.classList.remove('active'));
-            el.classList.add('active');
-            updateSummary();
-        }
+    <main class="main-layout">
+        <section class="selection-area">
+            <span class="step-label">1. Pilih Jenis Kenderaan</span>
+            <div class="vehicle-grid">
+                <div id="btnSedan" class="op-card active" onclick="setVehicle('Sedan')">
+                    <span>🚗</span>SEDAN
+                </div>
+                <div id="btnSUV" class="op-card" onclick="setVehicle('SUV/MPV')">
+                    <span>🚙</span>SUV / MPV
+                </div>
+            </div>
 
-        function toggleService(name, price, el) {
-            const index = selectedServices.indexOf(name);
-            if (index > -1) {
-                selectedServices.splice(index, 1);
-                totalPrice -= price;
-                el.classList.remove('selected');
-            } else {
-                selectedServices.push(name);
-                totalPrice += price;
-                el.classList.add('selected');
-            }
-            updateSummary();
-        }
+            <span class="step-label">2. Pilih Servis (Action)</span>
+            <div class="service-list">
+                <div id="item-basic" class="service-item" onclick="toggleService('Basic Wash', 'item-basic')">
+                    <div><b>Basic Wash</b><br><small>Cucian premium luar & dalam</small></div>
+                    <div class="price-action">
+                        <span id="p-basic" class="price-tag">RM15</span>
+                        <div class="checkbox"></div>
+                    </div>
+                </div>
+                <div id="item-nano" class="service-item" onclick="toggleService('Nano Coating', 'item-nano')">
+                    <div><b>Nano Coating</b><br><small>Kilat & perlindungan cat</small></div>
+                    <div class="price-action">
+                        <span id="p-nano" class="price-tag">RM35</span>
+                        <div class="checkbox"></div>
+                    </div>
+                </div>
+                <div id="item-engine" class="service-item" onclick="toggleService('Engine Detailing', 'item-engine')">
+                    <div><b>Engine Detailing</b><br><small>Cucian rapi ruang enjin</small></div>
+                    <div class="price-action">
+                        <span id="p-engine" class="price-tag">RM45</span>
+                        <div class="checkbox"></div>
+                    </div>
+                </div>
+            </div>
 
-        function updateSummary() {
-            document.getElementById('displayTotal').innerText = `RM ${totalPrice}`;
-            const details = document.getElementById('order-details');
-            
-            if (selectedServices.length === 0) {
-                details.innerHTML = "Sila pilih servis untuk mulakan...";
-            } else {
-                details.innerHTML = `
-                    <b>Kenderaan:</b> ${selectedVehicle}<br>
-                    <b>Servis:</b> ${selectedServices.join(', ')}
-                `;
-            }
-        }
+            <span class="step-label" style="margin-top:40px;">3. Customer Reviews</span>
+            <div class="review-container">
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Enjin nampak baru! 6+1 promo tu memang berbaloi."</p>
+                    <small>- Fitri (Honda Civic)</small>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Senang, cuci depan rumah je. Berkilat gila!"</p>
+                    <small>- Ariff (Proton X50)</small>
+                </div>
+            </div>
+        </section>
 
-        function sendWhatsApp() {
-            if (totalPrice === 0) {
-                alert('Sila pilih sekurang-kurangnya satu servis!');
-                return;
-            }
-            const text = `Tempahan XD Waterless:%0AJenis: ${selectedVehicle}%0AServis: ${selectedServices.join(', ')}%0ATotal: RM${totalPrice}`;
-            window.location.href = `https://wa.me/60167003569?text=${text}`;
-        }
-    </script>
+        <aside class="action-area">
+            <div class="summary-panel">
+                <span class="step-label" style="color:white; margin:0;">Summary Tempahan</span>
+                <div id="summary-text" class="summary-details">Sila pilih servis...</div>
+                <hr class="divider">
+                <div class="total-label">JUMLAH KESELURUHAN</div>
+                <div class="total-price" id="totalDisplay">RM 0</div>
+                <button class="btn-confirm" onclick="sendWhatsApp()">Confirm & Book Now</button>
+            </div>
+        </aside>
+    </main>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
