@@ -8,59 +8,61 @@
 </head>
 <body>
     <div class="main-bg"></div>
-    
     <div class="container">
-        <header class="hero">
-            <div class="hero-poster-container">
-                <img src="Untitled design_20260102_145739_0000.png" class="hero-poster" alt="XD Waterless Hero">
-            </div>
-            <img src="Untitled design_20251230_222907_0000.png" class="mini-logo">
-            <p class="hero-tagline">Premium Mobile Detailing • Shah Alam</p>
+        <header class="hero-section">
+            <img src="Untitled design_20260102_145739_0000.png" class="main-poster" alt="XD Waterless Poster">
         </header>
 
-        <section class="booking-section">
-            <h3 class="section-title">1. PILIH JENIS KENDERAAN</h3>
-            <div class="vehicle-grid">
-                <div class="v-card active" id="v-sedan" onclick="selectVehicle('sedan')">
-                    <span class="v-icon">🚗</span>
-                    <p>SEDAN / HATCH</p>
-                </div>
-                <div class="v-card" id="v-suv" onclick="selectVehicle('suv')">
-                    <span class="v-icon">🚙</span>
-                    <p>SUV / MPV</p>
-                </div>
+        <section class="booking-card">
+            <h3 class="label-neon">1. PILIH JENIS KENDERAAN</h3>
+            <div class="vehicle-selector">
+                <button class="v-btn active" id="v-sedan" onclick="selectVehicle('sedan')">🚗 SEDAN</button>
+                <button class="v-btn" id="v-suv" onclick="selectVehicle('suv')">🚙 SUV / MPV</button>
             </div>
         </section>
 
-        <section class="booking-section">
-            <h3 class="section-title">2. PILIH SERVIS</h3>
-            <div class="service-card" onclick="toggleService('wash')">
-                <div class="s-info">
-                    <h4>Basic Wash</h4>
-                    <p>Cucian body luar, cermin & rim</p>
+        <section class="booking-card">
+            <h3 class="label-neon">2. PILIH SERVIS</h3>
+            <div class="service-box" id="card-wash" onclick="toggleService('wash')">
+                <div class="s-text">
+                    <strong>Basic Wash</strong>
+                    <small>Body luar, cermin & rim</small>
                 </div>
-                <div class="s-price">RM <span id="price-wash">15</span></div>
+                <div class="s-price">RM <span id="price-wash">0</span></div>
             </div>
 
-            <div class="service-card popular" onclick="toggleService('nano')">
-                <div class="badge">POPULAR</div>
-                <div class="s-info">
-                    <h4>Nano Coating</h4>
-                    <p>Kilat & perlindungan cat premium</p>
+            <div class="service-box popular" id="card-nano" onclick="toggleService('nano')">
+                <div class="pop-badge">POPULAR</div>
+                <div class="s-text">
+                    <strong>Nano Coating</strong>
+                    <small>Kilat & pelindung cat premium</small>
                 </div>
-                <div class="s-price">RM <span id="price-nano">20</span></div>
+                <div class="s-price">RM <span id="price-nano">0</span></div>
             </div>
         </section>
 
-        <div class="sticky-footer">
-            <div class="total-display">
-                <p>JUMLAH ESTIMASI</p>
-                <div class="amount">RM <span id="grand-total">0</span></div>
+        <section class="booking-card loyalty-card">
+            <h3 class="label-neon">🎁 PROMO KESETIAAN</h3>
+            <p class="loyalty-desc">Cuci 6 kali, dapat <strong>1 KALI FREE!</strong></p>
+            <div class="stamp-grid">
+                <div class="stamp filled">✓</div>
+                <div class="stamp filled">✓</div>
+                <div class="stamp">3</div>
+                <div class="stamp">4</div>
+                <div class="stamp">5</div>
+                <div class="stamp free-label">FREE</div>
             </div>
-            <a href="#" id="btn-booking" class="cta-wa">CONFIRM BOOKING</a>
+            <small class="loyalty-note">*Tunjukkan rekod WhatsApp semasa servis untuk stamp.</small>
+        </section>
+
+        <div class="footer-bar">
+            <div class="total-info">
+                <span>ESTIMASI:</span>
+                <h2 id="grand-total">RM 0</h2>
+            </div>
+            <a href="#" id="btn-booking" class="btn-confirm">CONFIRM BOOKING</a>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
