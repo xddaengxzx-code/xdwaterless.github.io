@@ -3,57 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless | Premium Mobile Detailing</title>
+    <title>XD Waterless | Premium Booking</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
+    <div class="main-bg"></div>
+    
     <div class="container">
-        <header>
-            <img src="Untitled design_20251230_222907_0000.png" class="brand-logo" alt="Logo XD Waterless">
-            <h1>XD WATERLESS</h1>
-            <div id="promo" class="promo-box">MEMUATKAN PROMO...</div>
+        <header class="hero">
+            <div class="hero-poster-container">
+                <img src="Untitled design_20260102_145739_0000.png" class="hero-poster" alt="XD Waterless Hero">
+            </div>
+            <img src="Untitled design_20251230_222907_0000.png" class="mini-logo">
+            <p class="hero-tagline">Premium Mobile Detailing • Shah Alam</p>
         </header>
 
-        <div class="price-section">
+        <section class="booking-section">
             <h3 class="section-title">1. PILIH JENIS KENDERAAN</h3>
-            <div class="option-grid">
-                <button class="opt-btn active" id="btn-sedan">🚗 SEDAN</button>
-                <button class="opt-btn" id="btn-suv">🚙 SUV / MPV</button>
+            <div class="vehicle-grid">
+                <div class="v-card active" id="v-sedan" onclick="selectVehicle('sedan')">
+                    <span class="v-icon">🚗</span>
+                    <p>SEDAN / HATCH</p>
+                </div>
+                <div class="v-card" id="v-suv" onclick="selectVehicle('suv')">
+                    <span class="v-icon">🚙</span>
+                    <p>SUV / MPV</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="price-section">
+        <section class="booking-section">
             <h3 class="section-title">2. PILIH SERVIS</h3>
-            <div class="service-list">
-                <div class="service-item">
-                    <label><input type="checkbox" class="service-check" value="wash"> Basic Wash</label>
-                    <span class="price-tag" id="disp-wash">RM -</span>
+            <div class="service-card" onclick="toggleService('wash')">
+                <div class="s-info">
+                    <h4>Basic Wash</h4>
+                    <p>Cucian body luar, cermin & rim</p>
                 </div>
-                <div class="service-item">
-                    <label><input type="checkbox" class="service-check" value="nano"> Nano Coating</label>
-                    <span class="price-tag" id="disp-nano">RM -</span>
-                </div>
+                <div class="s-price">RM <span id="price-wash">15</span></div>
             </div>
-            <div class="total-box">JUMLAH: RM <span id="total-price">0</span></div>
+
+            <div class="service-card popular" onclick="toggleService('nano')">
+                <div class="badge">POPULAR</div>
+                <div class="s-info">
+                    <h4>Nano Coating</h4>
+                    <p>Kilat & perlindungan cat premium</p>
+                </div>
+                <div class="s-price">RM <span id="price-nano">20</span></div>
+            </div>
+        </section>
+
+        <div class="sticky-footer">
+            <div class="total-display">
+                <p>JUMLAH ESTIMASI</p>
+                <div class="amount">RM <span id="grand-total">0</span></div>
+            </div>
+            <a href="#" id="btn-booking" class="cta-wa">CONFIRM BOOKING</a>
         </div>
-
-        <img src="1767016706700.jpg" class="main-poster" alt="Poster XD Waterless">
-
-        <div class="price-section">
-            <h3 class="section-title">BERI RATING & REVIEW</h3>
-            <form action="https://formspree.io/f/your-id" method="POST">
-                <select name="rating" class="input-field">
-                    <option value="5">⭐⭐⭐⭐⭐ (Terbaik)</option>
-                    <option value="4">⭐⭐⭐⭐ (Bagus)</option>
-                    <option value="3">⭐⭐⭐ (Biasa)</option>
-                </select>
-                <textarea name="message" class="input-field" placeholder="Tulis review anda..."></textarea>
-                <button type="submit" class="submit-btn">HANTAR REVIEW</button>
-            </form>
-        </div>
-
-        <a href="#" id="wa-booking" class="wa-button">TEMPAH VIA WHATSAPP</a>
     </div>
 
     <script src="script.js"></script>
