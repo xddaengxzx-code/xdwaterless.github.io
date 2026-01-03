@@ -3,68 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>XD Waterless | Premium</title>
-    <link rel="stylesheet" href="style.css">
+    <title>XD Waterless Premium</title>
+    <style>
+        :root { --neon: #ccff00; --bg: #000; --card: #121212; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background: var(--bg); color: #fff; }
+        .wrapper { max-width: 450px; margin: 0 auto; padding-bottom: 160px; }
+        
+        /* HEADER */
+        .header { text-align: center; padding: 20px; }
+        .logo { font-weight: 900; color: var(--neon); letter-spacing: 2px; display: block; margin-bottom: 10px; }
+        .hero-img { width: 100%; border-radius: 15px; border: 1px solid #222; }
+
+        /* CATEGORY */
+        .section { padding: 15px 20px; }
+        .label { font-size: 10px; color: #666; font-weight: bold; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+        .btn-group { display: flex; gap: 10px; background: #111; padding: 5px; border-radius: 10px; }
+        .v-btn { flex: 1; padding: 12px; border: none; border-radius: 8px; background: transparent; color: #666; font-weight: bold; cursor: pointer; }
+        .v-btn.active { background: #222; color: var(--neon); border: 1px solid #333; }
+
+        /* SERVICE CARDS */
+        .card { background: var(--card); border: 1px solid #222; padding: 20px; border-radius: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .s-name { font-weight: bold; font-size: 15px; display: block; }
+        .s-desc { font-size: 11px; color: #555; }
+        .s-price { color: var(--neon); font-size: 22px; font-weight: 900; }
+
+        /* FOOTER */
+        .footer { position: fixed; bottom: 0; width: 100%; max-width: 450px; background: #000; border-top: 1px solid #222; padding: 15px; display: flex; align-items: center; z-index: 100; }
+        .qr-box { text-align: center; margin-right: 15px; }
+        .qr-img { width: 55px; height: 55px; background: #fff; border-radius: 4px; display: block; }
+        .qr-label { font-size: 8px; color: #444; margin-top: 4px; font-weight: bold; }
+        .total-box { flex-grow: 1; }
+        .total-label { font-size: 9px; color: #555; display: block; }
+        .total-val { font-size: 24px; font-weight: 900; }
+        .btn-book { background: var(--neon); color: #000; border: none; padding: 15px 25px; border-radius: 10px; font-weight: 900; cursor: pointer; }
+    </style>
 </head>
 <body>
-    <div class="main-bg"></div>
-    <div class="container">
-        
-        <header class="hero-header">
-            <div class="header-content">
-                <h1 class="brand-name">XD Waterless</h1>
-                <img src="Untitled design_20260102_145739_0000.png" class="head-car-img" alt="Header Car">
-            </div>
-        </header>
 
-        <section class="section-group">
-            <label class="section-label">VEHICLE CATEGORY</label>
-            <div class="vehicle-grid">
-                <button class="v-btn active" id="v-sedan" onclick="selectVehicle('sedan')">SEDAN / HATCH</button>
-                <button class="v-btn" id="v-suv" onclick="selectVehicle('suv')">SUV / MPV</button>
-            </div>
-        </section>
-
-        <section class="section-group">
-            <label class="section-label">SELECT SERVICE</label>
-            
-            <div class="service-card" id="card-wash" onclick="toggleService('wash')">
-                <div class="s-info">
-                    <span class="s-title">BASIC WATERLESS WASH</span>
-                    <span class="s-desc">Body, Glass & Rims Treatment</span>
-                </div>
-                <div class="s-price">RM <span id="price-wash">15</span></div>
-            </div>
-
-            <div class="service-card" id="card-nano" onclick="toggleService('nano')">
-                <div class="pop-badge">BEST SELLER</div>
-                <div class="s-info">
-                    <span class="s-title">PREMIUM NANO COATING</span>
-                    <span class="s-desc">High-Gloss & Paint Protection</span>
-                </div>
-                <div class="s-price">RM <span id="price-nano">20</span></div>
-            </div>
-        </section>
-
-        <div class="promo-bar">
-            <span class="promo-text">6 TIMES WASH, GET 1 FREE WASH!</span>
-        </div>
-
-        <footer class="footer-bar">
-            <div class="qr-section">
-                <img src="qr-code.png" class="qr-img" alt="QR Pay">
-                <span class="qr-label">SCAN TO PAY</span>
-            </div>
-            
-            <div class="price-action">
-                <div class="total-wrap">
-                    <span class="total-label">ESTIMATED TOTAL</span>
-                    <div id="grand-total" class="total-amount">RM 0</div>
-                </div>
-                <button onclick="sendBooking()" class="btn-primary">CONFIRM BOOKING</button>
-            </div>
-        </footer>
+<div class="wrapper">
+    <div class="header">
+        <span class="logo">XD WATERLESS</span>
+        <img src="Untitled design_20260102_145739_0000.png" class="hero-img">
     </div>
-    <script src="script.js"></script>
+
+    <div class="section">
+        <span class="label">VEHICLE TYPE</span>
+        <div class="btn-group">
+            <button id="btn-sedan" class="v-btn active" onclick="setVeh('sedan')">SEDAN</button>
+            <button id="btn-suv" class="v-btn" onclick="setVeh('suv')">SUV / MPV</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <span class="label">SERVICES</span>
+        <div class="card" id="card-wash" onclick="setServ('wash')">
+            <div>
+                <span class="s-name">Basic Waterless Wash</span>
+                <span class="s-desc">Exterior & Rims</span>
+            </div>
+            <div class="s-price">RM <span id="val-wash">15</span></div>
+        </div>
+        <div class="card" id="card-nano" onclick="setServ('nano')">
+            <div>
+                <span class="s-name">Premium Nano Coating</span>
+                <span class="s-desc">Protection & Shine</span>
+            </div>
+            <div class="s-price">RM <span id="val-nano">20</span></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="qr-box">
+            <img src="qr-code.png" class="qr-img">
+            <span class="qr-label">SCAN TO PAY</span>
+        </div>
+        <div class="total-box">
+            <span class="total-label">TOTAL AMOUNT</span>
+            <span id="grand-total" class="total-val">RM 0</span>
+        </div>
+        <button class="btn-book" onclick="submit()">BOOK NOW</button>
+    </footer>
+</div>
+
+<script>
+    let vType = 'sedan';
+    let sList = { wash: false, nano: false };
+    const db = {
+        sedan: { wash: 15, nano: 20 },
+        suv: { wash: 25, nano: 40 }
+    };
+
+    function setVeh(t) {
+        vType = t;
+        // Visual button
+        document.getElementById('btn-sedan').className = (t === 'sedan' ? 'v-btn active' : 'v-btn');
+        document.getElementById('btn-suv').className = (t === 'suv' ? 'v-btn active' : 'v-btn');
+        
+        // TUKAR HARGA LIVE (Punca masalah tadi)
+        document.getElementById('val-wash').innerText = db[t].wash;
+        document.getElementById('val-nano').innerText = db[t].nano;
+        
+        calc();
+    }
+
+    function setServ(s) {
+        sList[s] = !sList[s];
+        document.getElementById('card-' + s).style.borderColor = sList[s] ? '#ccff00' : '#222';
+        document.getElementById('card-' + s).style.background = sList[s] ? '#1a1a00' : '#121212';
+        calc();
+    }
+
+    function calc() {
+        let total = 0;
+        if(sList.wash) total += db[vType].wash;
+        if(sList.nano) total += db[vType].nano;
+        document.getElementById('grand-total').innerText = "RM " + total;
+    }
+
+    function submit() {
+        let total = document.getElementById('grand-total').innerText;
+        if(total === "RM 0") return alert("Pilih servis dulu!");
+        let msg = `Salam XD Waterless, booking ${vType.toUpperCase()}. Total: ${total}`;
+        window.location.href = `https://wa.me/60167003569?text=${encodeURIComponent(msg)}`;
+    }
+</script>
+
 </body>
 </html>
