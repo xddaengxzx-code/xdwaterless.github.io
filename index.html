@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>XD Waterless | Booking</title>
+    <title>XD Waterless | Premium Detailing</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
         </header>
 
         <section class="booking-card">
-            <h3 class="label-neon">1. JENIS KENDERAAN</h3>
+            <h3 class="label-neon">1. PILIH JENIS KENDERAAN</h3>
             <div class="vehicle-selector">
                 <button class="v-btn active" id="v-sedan" onclick="selectVehicle('sedan')">🚗 SEDAN</button>
                 <button class="v-btn" id="v-suv" onclick="selectVehicle('suv')">🚙 SUV / MPV</button>
@@ -29,18 +29,18 @@
             <div class="service-box" id="card-wash" onclick="toggleService('wash')">
                 <div class="s-text">
                     <strong>Basic Wash</strong>
-                    <small>Body, Cermin & Rim</small>
+                    <small>Cucian body luar, cermin & rim</small>
                 </div>
-                <div class="s-price">RM <span id="price-wash">0</span></div>
+                <div class="s-price">RM <span id="price-wash">15</span></div>
             </div>
 
             <div class="service-box popular" id="card-nano" onclick="toggleService('nano')">
                 <div class="pop-badge">POPULAR</div>
                 <div class="s-text">
                     <strong>Nano Coating</strong>
-                    <small>Kilat & Pelindung Cat</small>
+                    <small>Kilat & perlindungan cat premium</small>
                 </div>
-                <div class="s-price">RM <span id="price-nano">0</span></div>
+                <div class="s-price">RM <span id="price-nano">20</span></div>
             </div>
         </section>
 
@@ -59,7 +59,7 @@
 
         <div class="footer-bar">
             <div class="total-info">
-                <span style="font-size: 0.6em; color: #888;">ESTIMASI:</span>
+                <span style="font-size: 0.6em; color: #888; text-transform: uppercase;">Estimasi:</span>
                 <h2 id="grand-total">RM 0</h2>
             </div>
             <a href="#" id="btn-booking" class="btn-confirm">CONFIRM BOOKING</a>
