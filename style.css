@@ -1,69 +1,168 @@
-:root { 
-    --neon: #ccff00; 
-    --dark: #0a0a0a; 
-    --grey: #161616; 
-    --border: #222;
+:root{
+  --neon:#b6ff2a;
+  --dark:#000;
+  --card:#0b0f0c;
+  --border:#1e2b1e;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body { 
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('1767016706700.jpg'); 
-    background-size: cover; 
-    background-position: center;
-    background-attachment: fixed;
-    color: white; 
-    font-family: 'Inter', sans-serif; 
-    padding: 20px;
-    min-height: 100vh;
+*{
+  box-sizing:border-box;
 }
 
-.app-container { max-width: 1200px; margin: 0 auto; }
-
-.main-logo {
-    width: 200px;
-    filter: drop-shadow(0 0 10px var(--neon));
-    margin-bottom: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at top,#0f1a12,#000);
+  color:#eaffea;
 }
 
-.promo-banner {
-    background: var(--neon); color: black; padding: 12px; border-radius: 50px;
-    text-align: center; font-weight: 900; margin-bottom: 30px;
-    animation: jump 0.6s infinite alternate;
+.promo{
+  background:var(--neon);
+  color:#000;
+  text-align:center;
+  font-weight:700;
+  padding:8px;
+  font-size:13px;
 }
-@keyframes jump { from { transform: translateY(0); } to { transform: translateY(-8px); } }
 
-.header { text-align: center; margin-bottom: 40px; }
-h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 0.85; text-transform: uppercase; font-weight: 900; text-shadow: 2px 2px 10px #000; }
-.step-label { color: var(--neon); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; display: block; }
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:20px;
+}
 
-.main-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
-@media (min-width: 992px) { .main-layout { grid-template-columns: 1.6fr 1fr; } }
+.hero{
+  text-align:center;
+  padding:30px 10px 20px;
+}
 
-.vehicle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
-.op-card { background: var(--grey); border: 2px solid var(--border); padding: 30px; border-radius: 20px; text-align: center; cursor: pointer; }
-.op-card.active { border-color: var(--neon); background: rgba(204,255,0,0.05); }
+.hero h1{
+  margin:10px 0 5px;
+  font-size:34px;
+  color:var(--neon);
+  text-shadow:0 0 18px rgba(182,255,42,.35);
+}
 
-.service-list { background: var(--grey); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; }
-.service-item { display: flex; justify-content: space-between; align-items: center; padding: 25px; border-bottom: 1px solid var(--border); cursor: pointer; }
-.service-item.selected { border-left: 5px solid var(--neon); background: rgba(255,255,255,0.03); }
+.hero p{
+  font-size:14px;
+  opacity:.85;
+}
 
-.price-tag { color: var(--neon); font-weight: 900; font-size: 1.2rem; }
-.checkbox { width: 24px; height: 24px; border: 2px solid #444; border-radius: 6px; position: relative; }
-.selected .checkbox { background: var(--neon); border-color: var(--neon); }
-.selected .checkbox::after { content: '✓'; color: black; position: absolute; left: 4px; top: -2px; font-weight: 900; }
+.section-title{
+  margin:25px 0 10px;
+  font-size:14px;
+  letter-spacing:1px;
+  color:var(--neon);
+}
 
-.summary-panel { background: #111; padding: 35px; border-radius: 25px; border: 2px solid var(--neon); position: sticky; top: 20px; }
-.total-price { font-size: 3rem; font-weight: 900; color: var(--neon); margin-bottom: 25px; }
-.btn-confirm { background: var(--neon); color: black; padding: 20px; width: 100%; border: none; border-radius: 15px; font-weight: 900; text-transform: uppercase; cursor: pointer; }
+.vehicle{
+  display:flex;
+  gap:10px;
+}
 
-/* KOTAK KOMEN JADI PUTIH SUPAYA FB COMMENTS JELAS */
-.comment-box {
-    background: #fff;
-    padding: 15px;
-    border-radius: 15px;
-    margin-top: 10px;
+.vehicle button{
+  flex:1;
+  background:#111;
+  border:1px solid var(--border);
+  color:#fff;
+  padding:12px;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.vehicle button.active{
+  border-color:var(--neon);
+  box-shadow:0 0 12px rgba(182,255,42,.3);
+}
+
+.service-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  margin-bottom:14px;
+  cursor:pointer;
+  position:relative;
+  transition:.2s;
+}
+
+.service-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(182,255,42,.2);
+}
+
+.service-card.selected{
+  border-color:var(--neon);
+}
+
+.service-card h3{
+  margin:0 0 6px;
+  font-size:16px;
+}
+
+.service-card p{
+  margin:0;
+  font-size:13px;
+  opacity:.8;
+}
+
+.price{
+  position:absolute;
+  right:18px;
+  top:18px;
+  font-size:18px;
+  font-weight:700;
+  color:var(--neon);
+}
+
+.badge{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  background:var(--neon);
+  color:#000;
+  font-size:11px;
+  padding:4px 10px;
+  border-radius:20px;
+  font-weight:700;
+}
+
+.summary{
+  margin-top:25px;
+  background:#070a08;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+  text-align:center;
+}
+
+.summary p{
+  margin:0;
+  font-size:13px;
+  opacity:.8;
+}
+
+.summary h2{
+  margin:8px 0 14px;
+  font-size:26px;
+  color:var(--neon);
+}
+
+.cta{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:var(--neon);
+  color:#000;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.note{
+  margin-top:10px;
+  font-size:11px;
+  opacity:.7;
 }
