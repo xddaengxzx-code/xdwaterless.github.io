@@ -3,7 +3,7 @@ let activeServices = { wash: false, nano: false };
 
 const prices = {
     sedan: { wash: 15, nano: 20 },
-    suv: { wash: 25, nano: 20 }
+    suv: { wash: 25, nano: 40 }
 };
 
 function selectVehicle(type) {
@@ -18,8 +18,8 @@ function selectVehicle(type) {
 function toggleService(s) {
     activeServices[s] = !activeServices[s];
     const el = document.getElementById('card-' + s);
-    el.style.borderColor = activeServices[s] ? '#ccff00' : '#444';
-    el.style.background = activeServices[s] ? 'rgba(204,255,0,0.1)' : '#222';
+    el.style.borderColor = activeServices[s] ? '#ccff00' : '#2a2a2a';
+    el.style.background = activeServices[s] ? 'rgba(204,255,0,0.05)' : '#1a1a1a';
     calculate();
 }
 
@@ -29,8 +29,13 @@ function calculate() {
     if(activeServices.wash) { total += prices[currentType].wash; selected.push("Wash"); }
     if(activeServices.nano) { total += prices[currentType].nano; selected.push("Nano"); }
     document.getElementById('grand-total').innerText = "RM " + total;
-    let msg = `Salam XD Waterless, booking ${currentType.toUpperCase()}: ${selected.join("+")}. Total RM${total}`;
-    document.getElementById('btn-booking').href = `https://wa.me/60167003569?text=${encodeURIComponent(msg)}`;
+}
+
+function sendBooking() {
+    let total = document.getElementById('grand-total').innerText;
+    if(total === "RM 0") return alert("Sila pilih servis!");
+    let msg = `Salam XD Waterless, booking:\nKereta: ${currentType.toUpperCase()}\nTotal: ${total}`;
+    window.location.href = `https://wa.me/60167003569?text=${encodeURIComponent(msg)}`;
 }
 
 selectVehicle('sedan');
