@@ -10,7 +10,6 @@ function selectVehicle(type) {
     currentType = type;
     document.getElementById('v-sedan').className = type === 'sedan' ? 'v-btn active' : 'v-btn';
     document.getElementById('v-suv').className = type === 'suv' ? 'v-btn active' : 'v-btn';
-    
     document.getElementById('price-wash').innerText = prices[type].wash;
     document.getElementById('price-nano').innerText = prices[type].nano;
     calculate();
@@ -18,7 +17,7 @@ function selectVehicle(type) {
 
 function toggleService(s) {
     activeServices[s] = !activeServices[s];
-    const el = document.getElementById(s === 'wash' ? 'card-wash' : 'card-nano');
+    const el = document.getElementById('card-' + s);
     el.style.borderColor = activeServices[s] ? '#ccff00' : '#444';
     el.style.background = activeServices[s] ? 'rgba(204,255,0,0.1)' : '#222';
     calculate();
@@ -29,12 +28,10 @@ function calculate() {
     let selected = [];
     if(activeServices.wash) { total += prices[currentType].wash; selected.push("Basic Wash"); }
     if(activeServices.nano) { total += prices[currentType].nano; selected.push("Nano Coating"); }
-    
     document.getElementById('grand-total').innerText = "RM " + total;
     
-    let msg = `Salam XD Waterless, saya nak booking servis:\n\n🚗 Kenderaan: ${currentType.toUpperCase()}\n✨ Servis: ${selected.join(" + ") || "Tiada"}\n💰 Total Estimasi: RM${total}\n\n(Saya nak kumpul stamp Cuci 6 Free 1!)`;
+    let msg = `Salam XD Waterless, saya nak booking:\n🚗 Kenderaan: ${currentType.toUpperCase()}\n✨ Servis: ${selected.join(" + ")}\n💰 Total: RM${total}`;
     document.getElementById('btn-booking').href = `https://wa.me/60167003569?text=${encodeURIComponent(msg)}`;
 }
 
-// Start default
 selectVehicle('sedan');
