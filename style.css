@@ -1,47 +1,183 @@
-:root { --neon: #ccff00; --bg: #0d0d0d; --card: #1a1a1a; }
-
-body { margin: 0; background: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; line-height: 1.4; }
-.main-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at top right, #1a2e00, #000); z-index: -1; }
-
-.container { max-width: 450px; margin: auto; padding: 12px; padding-bottom: 110px; }
-
-/* GAMBAR POSTER (DIKECILKAN TINGGI) */
-.main-poster { 
-    width: 100%; 
-    max-height: 200px; /* Hadkan tinggi supaya tak makan skrin */
-    object-fit: cover; /* Biar dia crop tapi nampak kemas */
-    border-radius: 15px; 
-    border: 2px solid var(--neon); 
-    display: block; 
-    margin-bottom: 15px; 
+:root{
+  --neon:#b6ff2a;
+  --dark:#050805;
+  --card:#0d120e;
+  --border:#1f2b20;
 }
 
-.label-neon { color: var(--neon); font-size: 0.85em; margin-bottom: 12px; font-weight: bold; text-transform: uppercase; }
-.booking-card { background: var(--card); padding: 15px; border-radius: 18px; border: 1px solid #333; margin-bottom: 12px; }
+*{box-sizing:border-box}
 
-/* BUTTONS */
-.vehicle-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.v-btn { background: #222; border: 1px solid #444; color: #fff; padding: 12px; border-radius: 12px; font-weight: bold; font-size: 0.9em; cursor: pointer; }
-.v-btn.active { border-color: var(--neon); color: var(--neon); background: rgba(204,255,0,0.15); }
-
-/* HARGA (DIBESARKAN) */
-.service-box { background: #222; padding: 15px; border-radius: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #444; }
-.s-text strong { display: block; font-size: 1.1em; }
-.s-text small { font-size: 0.8em; color: #aaa; }
-
-.s-price { 
-    color: var(--neon); 
-    font-weight: 900; 
-    font-size: 1.6em; /* Harga sekarang sangat besar & jelas */
-    text-shadow: 0 0 10px rgba(204,255,0,0.3);
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(180deg,#050805,#000);
+  color:#eaffea;
 }
 
-/* LOYALTY */
-.stamp-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-top: 10px; }
-.stamp { aspect-ratio: 1/1; background: #111; border: 1px solid #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.7em; }
-.stamp.filled { background: var(--neon); color: #000; font-weight: bold; border-color: var(--neon); }
+/* HERO */
+.hero{
+  position:relative;
+  min-height:100vh;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,.95)),
+    url("https://images.unsplash.com/photo-1605559424843-9e4c228bf1c8") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
 
-/* FOOTER */
-.footer-bar { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 400px; background: rgba(0,0,0,0.95); border: 1px solid #444; padding: 12px; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
-.total-info h2 { margin: 0; color: var(--neon); font-size: 1.8em; font-weight: 900; }
-.btn-confirm { background: var(--neon); color: #000; text-decoration: none; padding: 12px 20px; border-radius: 12px; font-weight: 900; font-size: 0.9em; }
+.hero-content{
+  z-index:2;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:40px;
+  font-weight:800;
+  color:var(--neon);
+  text-shadow:0 0 20px rgba(182,255,42,.4);
+}
+
+.subtitle{
+  margin:10px 0 25px;
+  font-size:15px;
+  opacity:.85;
+}
+
+.hero-cta{
+  display:inline-block;
+  padding:14px 26px;
+  border-radius:30px;
+  background:var(--neon);
+  color:#000;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* SECTIONS */
+section{
+  padding:40px 20px;
+  max-width:480px;
+  margin:auto;
+}
+
+h2{
+  font-size:18px;
+  margin-bottom:16px;
+  color:var(--neon);
+}
+
+/* WHY */
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.why-item{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
+}
+
+/* VEHICLE */
+.vehicle{
+  display:flex;
+  gap:12px;
+  margin-bottom:25px;
+}
+
+.vehicle-btn{
+  flex:1;
+  padding:14px;
+  border-radius:16px;
+  background:#0a0f0b;
+  border:1px solid var(--border);
+  color:#fff;
+  font-weight:600;
+}
+
+.vehicle-btn.active{
+  border-color:var(--neon);
+  box-shadow:0 0 14px rgba(182,255,42,.35);
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  margin-bottom:30px;
+}
+
+.service-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:18px;
+  border-radius:18px;
+  position:relative;
+}
+
+.service-card.selected{
+  border-color:var(--neon);
+}
+
+.service-card h3{
+  margin:0 0 6px;
+}
+
+.service-card p{
+  margin:0;
+  font-size:13px;
+  opacity:.8;
+}
+
+.badge{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  background:var(--neon);
+  color:#000;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:800;
+}
+
+/* TOTAL */
+.total-box{
+  background:#050805;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:18px;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.total-box h3{
+  font-size:30px;
+  margin:6px 0 0;
+  color:var(--neon);
+}
+
+/* CTA */
+.cta{
+  width:100%;
+  padding:16px;
+  border-radius:20px;
+  border:none;
+  background:var(--neon);
+  color:#000;
+  font-size:16px;
+  font-weight:800;
+}
+
+.note{
+  font-size:11px;
+  text-align:center;
+  opacity:.7;
+  margin-top:12px;
+}
