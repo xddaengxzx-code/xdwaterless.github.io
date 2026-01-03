@@ -3,65 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>XD Waterless | Detailing</title>
+    <title>XD Waterless | Premium</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-bg"></div>
     <div class="container">
         
-        <header class="hero-section">
-            <div class="poster-container">
-                <img src="Untitled design_20260102_145739_0000.png" class="main-poster" alt="XD Waterless">
+        <header class="hero-header">
+            <div class="header-content">
+                <h1 class="brand-name">XD Waterless</h1>
+                <img src="Untitled design_20260102_145739_0000.png" class="head-car-img" alt="Header Car">
             </div>
         </header>
 
-        <section class="booking-card">
-            <h3 class="label-neon">1. JENIS KENDERAAN / <span class="en">VEHICLE</span></h3>
-            <div class="vehicle-selector">
-                <button class="v-btn active" id="v-sedan" onclick="selectVehicle('sedan')">🚗 SEDAN</button>
-                <button class="v-btn" id="v-suv" onclick="selectVehicle('suv')">🚙 SUV / MPV</button>
+        <section class="section-group">
+            <label class="section-label">VEHICLE CATEGORY</label>
+            <div class="vehicle-grid">
+                <button class="v-btn active" id="v-sedan" onclick="selectVehicle('sedan')">SEDAN / HATCH</button>
+                <button class="v-btn" id="v-suv" onclick="selectVehicle('suv')">SUV / MPV</button>
             </div>
         </section>
 
-        <section class="booking-card">
-            <h3 class="label-neon">2. PILIH SERVIS / <span class="en">SERVICE</span></h3>
-            <div class="service-box" id="card-wash" onclick="toggleService('wash')">
-                <div class="s-text">
-                    <strong>Basic Wash</strong>
-                    <small>Cucian body, cermin & rim</small>
+        <section class="section-group">
+            <label class="section-label">SELECT SERVICE</label>
+            
+            <div class="service-card" id="card-wash" onclick="toggleService('wash')">
+                <div class="s-info">
+                    <span class="s-title">BASIC WATERLESS WASH</span>
+                    <span class="s-desc">Body, Glass & Rims Treatment</span>
                 </div>
                 <div class="s-price">RM <span id="price-wash">15</span></div>
             </div>
 
-            <div class="service-box popular" id="card-nano" onclick="toggleService('nano')">
-                <div class="pop-badge">POPULAR</div>
-                <div class="s-text">
-                    <strong>Nano Coating</strong>
-                    <small>Kilat & pelindung premium</small>
+            <div class="service-card" id="card-nano" onclick="toggleService('nano')">
+                <div class="pop-badge">BEST SELLER</div>
+                <div class="s-info">
+                    <span class="s-title">PREMIUM NANO COATING</span>
+                    <span class="s-desc">High-Gloss & Paint Protection</span>
                 </div>
                 <div class="s-price">RM <span id="price-nano">20</span></div>
             </div>
         </section>
 
-        <section class="booking-card loyalty-card">
-            <div class="promo-notification">
-                <span class="bell-icon">🔔</span>
-                <div class="promo-ads">
-                    <p class="main-ads">6 TIMES WASH, GET 1 FREE WASH!</p>
-                    <p class="sub-ads">6 KALI CUCI, 1 KALI PERCUMA!</p>
-                </div>
-                <span class="bell-icon">🔔</span>
-            </div>
-        </section>
-
-        <div class="footer-bar">
-            <div class="total-info">
-                <span>ESTIMASI / <span class="en">TOTAL</span>:</span>
-                <h2 id="grand-total">RM 0</h2>
-            </div>
-            <a href="#" id="btn-booking" class="btn-confirm">CONFIRM BOOKING</a>
+        <div class="promo-bar">
+            <span class="promo-text">6 TIMES WASH, GET 1 FREE WASH!</span>
         </div>
+
+        <footer class="footer-bar">
+            <div class="qr-section">
+                <img src="qr-code.png" class="qr-img" alt="QR Pay">
+                <span class="qr-label">SCAN TO PAY</span>
+            </div>
+            
+            <div class="price-action">
+                <div class="total-wrap">
+                    <span class="total-label">ESTIMATED TOTAL</span>
+                    <div id="grand-total" class="total-amount">RM 0</div>
+                </div>
+                <button onclick="sendBooking()" class="btn-primary">CONFIRM BOOKING</button>
+            </div>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
