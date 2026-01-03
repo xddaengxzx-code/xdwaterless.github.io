@@ -1,67 +1,63 @@
-let currentVehicle = 'sedan';
+let currentType = 'sedan';
 let activeServices = { wash: false, nano: false };
-let priceList = { sedan: { wash: 0, nano: 0 }, suv: { wash: 0, nano: 0 } };
+let prices = { sedan: { wash: 0, nano: 0 }, suv: { wash: 0, nano: 0 } };
 
-// 1. Tarik data harga dari harga.json
+// Tarik data harga dari harga.json
 fetch('harga.json')
     .then(r => r.json())
     .then(data => {
-        priceList.sedan.wash = parseInt(data.sedan.basic);
-        priceList.sedan.nano = parseInt(data.sedan.nano);
-        priceList.suv.wash = parseInt(data.suv.basic);
-        priceList.suv.nano = parseInt(data.suv.nano);
-        updatePrices();
-    })
-    .catch(e => console.error("Gagal muat harga.json", e));
+        prices.sedan.wash = parseInt(data.sedan.basic);
+        prices.sedan.nano = parseInt(data.sedan.nano);
+        prices.suv.wash = parseInt(data.suv.basic);
+        prices.suv.nano = parseInt(data.suv.nano);
+        updateUI();
+    });
 
-// 2. Fungsi tukar jenis kenderaan
 function selectVehicle(type) {
-    currentVehicle = type;
+    currentType = type;
     document.getElementById('v-sedan').classList.toggle('active', type === 'sedan');
     document.getElementById('v-suv').classList.toggle('active', type === 'suv');
-    updatePrices();
+    updateUI();
 }
 
-// 3. Fungsi pilih servis
-function toggleService(service) {
-    activeServices[service] = !activeServices[service];
+function toggleService(s) {
+    activeServices[s] = !activeServices[s];
+    const el = document.getElementById(s === 'wash' ? 'card-wash' : 'card-nano');
     
-    // Beri kesan visual pada card yang dipilih
-    const cardId = service === 'wash' ? 'card-wash' : 'card-nano';
-    const card = document.querySelector(`.service-card:nth-child(${service === 'wash' ? 1 : 2})`);
-    if(card) {
-        card.style.borderColor = activeServices[service] ? '#ccff00' : '#333';
-        card.style.background = activeServices[service] ? 'rgba(204, 255, 0, 0.05)' : '#1a1a1a';
+    if(activeServices[s]) {
+        el.style.borderColor = "#ccff00";
+        el.style.background = "rgba(204,255,0,0.1)";
+    } else {
+        el.style.borderColor = "#444";
+        el.style.background = "#222";
     }
-    calculateTotal();
+    calculate();
 }
 
-// 4. Kemaskini paparan harga
-function updatePrices() {
-    document.getElementById('price-wash').innerText = priceList[currentVehicle].wash;
-    document.getElementById('price-nano').innerText = priceList[currentVehicle].nano;
-    calculateTotal();
+function updateUI() {
+    document.getElementById('price-wash').innerText = prices[currentType].wash;
+    document.getElementById('price-nano').innerText = prices[currentType].nano;
+    calculate();
 }
 
-// 5. Kira jumlah & kemaskini link WhatsApp
-function calculateTotal() {
+function calculate() {
     let total = 0;
     let selected = [];
     
     if(activeServices.wash) {
-        total += priceList[currentVehicle].wash;
+        total += prices[currentType].wash;
         selected.push("Basic Wash");
     }
     if(activeServices.nano) {
-        total += priceList[currentVehicle].nano;
+        total += prices[currentType].nano;
         selected.push("Nano Coating");
     }
     
-    document.getElementById('grand-total').innerText = total;
+    document.getElementById('grand-total').innerText = "RM " + total;
     
-    // Sediakan mesej WhatsApp
-    let vehicleName = currentVehicle === 'sedan' ? "SEDAN/HATCH" : "SUV/MPV";
-    let msg = `Salam XD Waterless, saya nak booking:\n🚗 Jenis: ${vehicleName}\n✨ Servis: ${selected.join(" + ") || "Tiada"}\n💰 Total: RM${total}`;
+    // LINK WHATSAPP DENGAN MESEJ AUTO
+    let vehicle = currentType === 'sedan' ? "SEDAN/HATCH" : "SUV/MPV";
+    let msg = `Salam XD Waterless, saya nak booking:\n\n🚗 Kenderaan: ${vehicle}\n✨ Servis: ${selected.join(" + ") || "Tiada"}\n💰 Total: RM${total}\n\n(Saya nak kumpul stamp Cuci 6 Free 1!)`;
     
     document.getElementById('btn-booking').href = `https://wa.me/60167003569?text=${encodeURIComponent(msg)}`;
 }
