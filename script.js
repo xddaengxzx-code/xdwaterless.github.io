@@ -4,7 +4,10 @@ let prices={};
 
 fetch("harga.json")
   .then(r=>r.json())
-  .then(d=>{prices=d;updateTotal();});
+  .then(d=>{
+    prices=d;
+    updateTotal();
+  });
 
 function updateTotal(){
   let total = prices[selectedVehicle].basic;
@@ -34,23 +37,18 @@ function submitBooking(){
   const name=custName.value;
   const phone=custPhone.value;
   const car=custCar.value;
-  if(!name||!phone||!car){alert("Sila isi semua maklumat");return;}
+  if(!name||!phone||!car){
+    alert("Sila isi semua maklumat");
+    return;
+  }
 
   let total = prices[selectedVehicle].basic;
   let service="Basic Wash";
-  if(selectedService==="nano"){total+=prices.addon.nano;service+=" + Nano";}
+  if(selectedService==="nano"){
+    total+=prices.addon.nano;
+    service+=" + Nano";
+  }
 
-  // GOOGLE SHEET
-  fetch("PASTE_APPS_SCRIPT_URL_DI_SINI",{
-    method:"POST",
-    body:JSON.stringify({
-      name, phone, car,
-      vehicle:selectedVehicle,
-      service, total
-    })
-  });
-
-  // WHATSAPP
   const msg =
 `Tempahan XD Waterless
 Nama: ${name}
