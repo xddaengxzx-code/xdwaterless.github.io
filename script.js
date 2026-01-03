@@ -1,41 +1,64 @@
-let currentType = 'sedan';
-let activeServices = { wash: false, nano: false };
+let selectedVehicle = "sedan";
+let selectedService = "basic";
+let prices = {};
 
-const prices = {
-    sedan: { wash: 15, nano: 20 },
-    suv: { wash: 25, nano: 40 }
-};
+const totalEl = document.getElementById("total");
+const confirmBtn = document.getElementById("confirmBtn");
 
-function selectVehicle(type) {
-    currentType = type;
-    document.getElementById('v-sedan').className = type === 'sedan' ? 'v-btn active' : 'v-btn';
-    document.getElementById('v-suv').className = type === 'suv' ? 'v-btn active' : 'v-btn';
-    document.getElementById('price-wash').innerText = prices[type].wash;
-    document.getElementById('price-nano').innerText = prices[type].nano;
-    calculate();
+/* LOAD PRICES */
+fetch("harga.json")
+  .then(res => res.json())
+  .then(data => {
+    prices = data;
+    updateTotal();
+  });
+
+function updateTotal(){
+  let total = prices[selectedVehicle].basic;
+  if(selectedService === "nano"){
+    total += prices.addon.nano;
+  }
+  totalEl.innerText = "RM " + total;
 }
 
-function toggleService(s) {
-    activeServices[s] = !activeServices[s];
-    const el = document.getElementById('card-' + s);
-    el.style.borderColor = activeServices[s] ? '#ccff00' : '#2a2a2a';
-    el.style.background = activeServices[s] ? 'rgba(204,255,0,0.05)' : '#1a1a1a';
-    calculate();
-}
+/* VEHICLE */
+document.querySelectorAll(".vehicle-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".vehicle-btn").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    selectedVehicle = btn.dataset.vehicle;
+    updateTotal();
+  });
+});
 
-function calculate() {
-    let total = 0;
-    let selected = [];
-    if(activeServices.wash) { total += prices[currentType].wash; selected.push("Wash"); }
-    if(activeServices.nano) { total += prices[currentType].nano; selected.push("Nano"); }
-    document.getElementById('grand-total').innerText = "RM " + total;
-}
+/* SERVICE */
+document.querySelectorAll(".service-card").forEach(card=>{
+  card.addEventListener("click",()=>{
+    document.querySelectorAll(".service-card").forEach(c=>c.classList.remove("selected"));
+    card.classList.add("selected");
+    selectedService = card.dataset.service;
+    updateTotal();
+  });
+});
 
-function sendBooking() {
-    let total = document.getElementById('grand-total').innerText;
-    if(total === "RM 0") return alert("Sila pilih servis!");
-    let msg = `Salam XD Waterless, booking:\nKereta: ${currentType.toUpperCase()}\nTotal: ${total}`;
-    window.location.href = `https://wa.me/60167003569?text=${encodeURIComponent(msg)}`;
-}
+/* WHATSAPP */
+confirmBtn.addEventListener("click",()=>{
+  let total = prices[selectedVehicle].basic;
+  let service = "Basic Wash";
 
-selectVehicle('sedan');
+  if(selectedService === "nano"){
+    total += prices.addon.nano;
+    service = "Basic Wash + Nano Coating";
+  }
+
+  const msg =
+    `Hai, saya nak booking XD Waterless.%0A`+
+    `Kenderaan: ${selectedVehicle.toUpperCase()}%0A`+
+    `Servis: ${service}%0A`+
+    `Jumlah: RM ${total}`;
+
+  window.open(
+    "https://wa.me/60167003569?text="+msg,
+    "_blank"
+  );
+});
