@@ -26,11 +26,10 @@ function toggleService(s) {
 function calculate() {
     let total = 0;
     let selected = [];
-    if(activeServices.wash) { total += prices[currentType].wash; selected.push("Basic Wash"); }
-    if(activeServices.nano) { total += prices[currentType].nano; selected.push("Nano Coating"); }
+    if(activeServices.wash) { total += prices[currentType].wash; selected.push("Wash"); }
+    if(activeServices.nano) { total += prices[currentType].nano; selected.push("Nano"); }
     document.getElementById('grand-total').innerText = "RM " + total;
-    
-    let msg = `Salam XD Waterless, saya nak booking:\n🚗 Kenderaan: ${currentType.toUpperCase()}\n✨ Servis: ${selected.join(" + ")}\n💰 Total: RM${total}`;
+    let msg = `Salam XD Waterless, booking ${currentType.toUpperCase()}: ${selected.join("+")}. Total RM${total}`;
     document.getElementById('btn-booking').href = `https://wa.me/60167003569?text=${encodeURIComponent(msg)}`;
 }
 
