@@ -1,52 +1,209 @@
-:root { 
-    --neon: #ccff00; 
-    --bg: #0d0d0d; 
-    --surface: #1a1a1a; 
-    --border: #2a2a2a;
+:root{
+  --neon:#b6ff2a;
+  --bg:#050805;
+  --card:#0d120e;
+  --border:#1f2b20;
 }
 
-* { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-body { margin: 0; background: var(--bg); color: #fff; font-family: sans-serif; }
+*{box-sizing:border-box}
 
-.container { width: 100%; max-width: 480px; margin: auto; padding-bottom: 140px; }
-
-/* HEADER GAMBAR KERETA */
-.hero-header { background: #000; text-align: center; padding-top: 20px; border-bottom: 2px solid var(--neon); }
-.brand-name { color: var(--neon); font-size: 24px; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
-.head-car-img { width: 100%; display: block; filter: drop-shadow(0 0 10px rgba(204,255,0,0.3)); }
-
-/* LAYOUT */
-.section-group { padding: 20px 15px 0 15px; }
-.section-label { font-size: 11px; color: #888; font-weight: bold; letter-spacing: 1px; margin-bottom: 12px; display: block; }
-
-.vehicle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.v-btn { background: var(--surface); border: 1px solid var(--border); color: #fff; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
-.v-btn.active { border-color: var(--neon); color: var(--neon); background: rgba(204,255,0,0.1); }
-
-.service-card { background: var(--surface); border: 1px solid var(--border); padding: 18px; border-radius: 12px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; position: relative; }
-.s-title { font-size: 14px; font-weight: 800; display: block; }
-.s-desc { font-size: 11px; color: #777; }
-.s-price { font-size: 22px; font-weight: 900; color: var(--neon); }
-.pop-badge { position: absolute; top: -8px; right: 10px; background: var(--neon); color: #000; font-size: 9px; font-weight: 900; padding: 2px 8px; border-radius: 4px; }
-
-.promo-bar { margin: 20px 15px; background: #222; padding: 12px; border-radius: 8px; text-align: center; border-left: 4px solid var(--neon); }
-.promo-text { color: var(--neon); font-weight: 800; font-size: 12px; animation: blink 1.5s infinite; }
-@keyframes blink { 50% { opacity: 0.3; } }
-
-/* FOOTER DENGAN QR */
-.footer-bar { 
-    position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); 
-    width: 100%; max-width: 480px; background: #000; 
-    border-top: 1px solid var(--border); padding: 15px; 
-    display: flex; align-items: center; justify-content: space-between;
-    backdrop-filter: blur(10px); z-index: 100;
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(180deg,#050805,#000);
+  color:#eaffea;
 }
 
-.qr-section { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-.qr-img { width: 60px; height: 60px; border: 2px solid #fff; border-radius: 5px; }
-.qr-label { font-size: 9px; font-weight: bold; color: #888; }
+/* PROMO */
+.promo-blink{
+  text-align:center;
+  padding:10px;
+  font-weight:800;
+  background:#b6ff2a;
+  color:#000;
+  animation:blink 1s infinite;
+  font-size:13px;
+}
 
-.price-action { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
-.total-label { font-size: 9px; color: #888; font-weight: bold; }
-.total-amount { font-size: 26px; font-weight: 900; }
-.btn-primary { background: var(--neon); color: #000; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 900; font-size: 13px; }
+@keyframes blink{
+  0%{opacity:1}
+  50%{opacity:.35}
+  100%{opacity:1}
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:80vh;
+  background:url("Untitled design_20260102_145739_0000.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:20px;
+}
+
+.hero h1{
+  color:var(--neon);
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:13px;
+  line-height:1.4;
+}
+
+.hero-btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:14px 28px;
+  border-radius:30px;
+  background:var(--neon);
+  color:#000;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* LOGO BG */
+.logo-bg{
+  position:relative;
+  padding:40px 20px;
+  background:url("Untitled design_20251230_222907_0000.png") center/contain no-repeat;
+}
+
+.logo-bg-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.85);
+}
+
+.logo-bg-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+
+.logo-bg h2{
+  color:var(--neon);
+  font-size:18px;
+}
+
+/* BOOKING */
+.booking{
+  max-width:460px;
+  margin:auto;
+  padding:25px 18px;
+}
+
+h3{
+  color:var(--neon);
+  font-size:14px;
+  margin:20px 0 10px;
+}
+
+/* VEHICLE */
+.vehicle{
+  display:flex;
+  gap:10px;
+}
+
+.vehicle-btn{
+  flex:1;
+  padding:12px;
+  border-radius:14px;
+  background:#0a0f0b;
+  border:1px solid var(--border);
+  color:#fff;
+  font-weight:600;
+}
+
+.vehicle-btn.active{
+  border-color:var(--neon);
+  box-shadow:0 0 10px rgba(182,255,42,.35);
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  gap:12px;
+}
+
+.service-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:14px;
+  position:relative;
+}
+
+.service-card.selected{
+  border-color:var(--neon);
+}
+
+.service-card h4{
+  margin:0 0 4px;
+}
+
+.service-card p{
+  margin:0;
+  font-size:12px;
+}
+
+.badge{
+  position:absolute;
+  top:-8px;
+  right:-8px;
+  background:var(--neon);
+  color:#000;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:20px;
+  font-weight:800;
+}
+
+/* TOTAL */
+.total-box{
+  margin-top:18px;
+  background:#050805;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:14px;
+  text-align:center;
+}
+
+.total-box h2{
+  color:var(--neon);
+}
+
+/* CTA */
+.cta{
+  width:100%;
+  margin-top:15px;
+  padding:16px;
+  border:none;
+  border-radius:18px;
+  background:var(--neon);
+  color:#000;
+  font-size:15px;
+  font-weight:800;
+}
+
+/* NOTE */
+.note{
+  margin-top:12px;
+  font-size:11px;
+  text-align:center;
+  opacity:.7;
+}
