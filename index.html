@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XD Waterless App</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XD Waterless</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- PROMO -->
+<!-- POSTER ATAS SEKALI (FAIL BETUL) -->
+<section class="poster-hero">
+  <img src="Untitled design_20260102_145739_0000.png" alt="XD Waterless Poster">
+</section>
+
+<!-- PROMO BLINK -->
 <div class="promo-blink">
   🔥 PROMO: CUCI 6 KALI • FREE 1 KALI 🔥<br>
   🔥 WASH 6 TIMES • GET 1 FREE 🔥
 </div>
 
-<!-- STEP 1 -->
-<section class="app-step active" id="step1">
-  <h1>WATERLESS CAR WASH</h1>
-  <p>Kilat dalam 20 minit · Kami datang ke lokasi anda</p>
+<!-- LOGO -->
+<div class="logo-wrap">
+  <img src="XD_WATERLESS_.png" alt="XD Waterless Logo">
+</div>
 
-  <h3>Pilih Kenderaan</h3>
+<!-- BOOKING APP -->
+<section class="app">
+
+  <h2>Pilih Kenderaan / Select Vehicle</h2>
   <div class="vehicle">
-    <button class="vehicle-btn active" data-vehicle="sedan">🚗 Sedan</button>
+    <button class="vehicle-btn active" data-vehicle="sedan">🚗 SEDAN</button>
     <button class="vehicle-btn" data-vehicle="suv">🚙 SUV / MPV</button>
   </div>
 
-  <h3>Pilih Servis</h3>
+  <h2>Pilih Servis / Select Service</h2>
   <div class="services">
     <div class="service-card selected" data-service="basic">
       <strong>Basic Wash</strong>
       <small>Exterior body & glass</small>
     </div>
+
     <div class="service-card" data-service="nano">
       <span class="badge">+RM20</span>
       <strong>Nano Coating</strong>
-      <small>Shine & protection</small>
+      <small>Shine & paint protection</small>
     </div>
   </div>
 
   <div class="total-box">
     <span>Jumlah / Total</span>
-    <h2 id="total">RM 15</h2>
+    <h1 id="total">RM 15</h1>
   </div>
 
-  <button class="cta" onclick="goStep(2)">NEXT</button>
-</section>
-
-<!-- STEP 2 -->
-<section class="app-step" id="step2">
-  <h2>Sahkan Tempahan</h2>
-
-  <input id="custName" placeholder="Nama / Name" />
-  <input id="custPhone" placeholder="WhatsApp (contoh: 0123456789)" />
-  <input id="custCar" placeholder="Model Kereta (Myvi, City...)" />
+  <h2>Maklumat Pelanggan</h2>
+  <input id="custName" placeholder="Nama">
+  <input id="custPhone" placeholder="WhatsApp">
+  <input id="custCar" placeholder="Model Kereta">
 
   <button class="cta" onclick="submitBooking()">
-    CONFIRM & WHATSAPP
+    CONFIRM BOOKING (WHATSAPP)
   </button>
 
-  <button class="back" onclick="goStep(1)">← Kembali</button>
 </section>
 
 <script src="script.js"></script>
