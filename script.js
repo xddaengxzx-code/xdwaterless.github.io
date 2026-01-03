@@ -1,52 +1,24 @@
-const hargaData = {
-    'Sedan': { 'Basic Wash': 15, 'Nano Coating': 35, 'Engine Detailing': 45 },
-    'SUV/MPV': { 'Basic Wash': 25, 'Nano Coating': 45, 'Engine Detailing': 55 }
-};
+let total = 15;
+const totalEl = document.getElementById("total");
+const confirmBtn = document.getElementById("confirmBtn");
 
-let currentVehicle = 'Sedan';
-let selectedServices = [];
+// SERVICE SELECTION
+document.querySelectorAll(".service-card").forEach(card=>{
+  card.addEventListener("click",()=>{
+    document.querySelectorAll(".service-card")
+      .forEach(c=>c.classList.remove("selected"));
 
-function setVehicle(type) {
-    currentVehicle = type;
-    document.getElementById('btnSedan').className = type === 'Sedan' ? 'op-card active' : 'op-card';
-    document.getElementById('btnSUV').className = type === 'SUV/MPV' ? 'op-card active' : 'op-card';
-    
-    document.getElementById('p-basic').innerText = `RM${hargaData[type]['Basic Wash']}`;
-    document.getElementById('p-nano').innerText = `RM${hargaData[type]['Nano Coating']}`;
-    document.getElementById('p-engine').innerText = `RM${hargaData[type]['Engine Detailing']}`;
-    
-    calculate();
-}
+    card.classList.add("selected");
+    total = card.dataset.price;
+    totalEl.innerText = "RM " + total;
+  });
+});
 
-function toggleService(name, id) {
-    const idx = selectedServices.indexOf(name);
-    if (idx > -1) {
-        selectedServices.splice(idx, 1);
-        document.getElementById(id).classList.remove('selected');
-    } else {
-        selectedServices.push(name);
-        document.getElementById(id).classList.add('selected');
-    }
-    calculate();
-}
-
-function calculate() {
-    let total = 0;
-    selectedServices.forEach(svc => {
-        total += hargaData[currentVehicle][svc];
-    });
-    document.getElementById('totalDisplay').innerText = `RM ${total}`;
-    
-    const summaryText = document.getElementById('summary-text');
-    summaryText.innerHTML = selectedServices.length > 0 ? 
-        `<b>Jenis:</b> ${currentVehicle}<br><b>Servis:</b> ${selectedServices.join(', ')}` : 
-        "Sila pilih servis...";
-}
-
-function sendWhatsApp() {
-    const total = document.getElementById('totalDisplay').innerText;
-    if (total === 'RM 0') return alert('Pilih servis dulu boss!');
-    
-    const msg = `Tempahan XD Waterless:%0A------------------------%0AKenderaan: ${currentVehicle}%0AServis: ${selectedServices.join(', ')}%0ATotal: ${total}%0A------------------------%0ASaya nak claim promo cuci ke-6 nanti!`;
-    window.location.href = `https://wa.me/60167003569?text=${msg}`;
-}
+// CONFIRM BOOKING → WHATSAPP
+confirmBtn.addEventListener("click",()=>{
+  const msg = `Tempahan XD Waterless%0AJumlah: RM ${total}`;
+  window.open(
+    "https://wa.me/60167003569?text=" + msg,
+    "_blank"
+  );
+});
