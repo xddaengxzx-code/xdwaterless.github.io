@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless | Premium Booking</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XD Waterless | Waterless Car Wash</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main-bg"></div>
-    <div class="container">
-        <header class="hero-section">
-            <img src="Untitled design_20260102_145739_0000.png" class="main-poster" alt="XD Waterless Poster">
-        </header>
 
-        <section class="booking-card">
-            <h3 class="label-neon">1. PILIH JENIS KENDERAAN</h3>
-            <div class="vehicle-selector">
-                <button class="v-btn active" id="v-sedan" onclick="selectVehicle('sedan')">🚗 SEDAN</button>
-                <button class="v-btn" id="v-suv" onclick="selectVehicle('suv')">🚙 SUV / MPV</button>
-            </div>
-        </section>
-
-        <section class="booking-card">
-            <h3 class="label-neon">2. PILIH SERVIS</h3>
-            <div class="service-box" id="card-wash" onclick="toggleService('wash')">
-                <div class="s-text">
-                    <strong>Basic Wash</strong>
-                    <small>Body luar, cermin & rim</small>
-                </div>
-                <div class="s-price">RM <span id="price-wash">0</span></div>
-            </div>
-
-            <div class="service-box popular" id="card-nano" onclick="toggleService('nano')">
-                <div class="pop-badge">POPULAR</div>
-                <div class="s-text">
-                    <strong>Nano Coating</strong>
-                    <small>Kilat & pelindung cat premium</small>
-                </div>
-                <div class="s-price">RM <span id="price-nano">0</span></div>
-            </div>
-        </section>
-
-        <section class="booking-card loyalty-card">
-            <h3 class="label-neon">🎁 PROMO KESETIAAN</h3>
-            <p class="loyalty-desc">Cuci 6 kali, dapat <strong>1 KALI FREE!</strong></p>
-            <div class="stamp-grid">
-                <div class="stamp filled">✓</div>
-                <div class="stamp filled">✓</div>
-                <div class="stamp">3</div>
-                <div class="stamp">4</div>
-                <div class="stamp">5</div>
-                <div class="stamp free-label">FREE</div>
-            </div>
-            <small class="loyalty-note">*Tunjukkan rekod WhatsApp semasa servis untuk stamp.</small>
-        </section>
-
-        <div class="footer-bar">
-            <div class="total-info">
-                <span>ESTIMASI:</span>
-                <h2 id="grand-total">RM 0</h2>
-            </div>
-            <a href="#" id="btn-booking" class="btn-confirm">CONFIRM BOOKING</a>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>WATERLESS CAR WASH</h1>
+      <p class="subtitle">Cuci kereta tanpa air · Datang ke lokasi anda</p>
+      <a href="#booking" class="hero-cta">Book Sekarang</a>
     </div>
-    <script src="script.js"></script>
+  </section>
+
+  <!-- WHY WATERLESS -->
+  <section class="why">
+    <h2>Kenapa Waterless?</h2>
+    <div class="why-grid">
+      <div class="why-item">💧 Jimat air</div>
+      <div class="why-item">🛡️ Selamat untuk cat</div>
+      <div class="why-item">⏱️ Siap ±20 minit</div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="booking">
+
+    <h2>Pilih Kenderaan</h2>
+    <div class="vehicle">
+      <button class="vehicle-btn active" data-vehicle="sedan">🚗 Sedan / Hatchback</button>
+      <button class="vehicle-btn" data-vehicle="suv">🚙 SUV / MPV</button>
+    </div>
+
+    <h2>Pilih Servis</h2>
+    <div class="services">
+      <div class="service-card selected" data-service="basic">
+        <h3>Basic Wash</h3>
+        <p>Cuci luar badan & cermin</p>
+      </div>
+
+      <div class="service-card" data-service="nano">
+        <span class="badge">POPULAR</span>
+        <h3>Nano Coating</h3>
+        <p>Kilat & perlindungan cat</p>
+      </div>
+    </div>
+
+    <!-- TOTAL -->
+    <div class="total-box">
+      <p>Jumlah Bayaran</p>
+      <h3 id="total">RM 15</h3>
+    </div>
+
+    <!-- CTA -->
+    <button class="cta" id="confirmBtn">CONFIRM BOOKING (WhatsApp)</button>
+
+    <p class="note">
+      Waterless wash menggunakan produk pelincir tinggi & microfiber khas.
+    </p>
+
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
