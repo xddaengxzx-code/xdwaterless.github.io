@@ -1,51 +1,58 @@
 let currentType = 'sedan';
 let activeServices = { wash: false, nano: false };
-let prices = { sedan: { wash: 0, nano: 0 }, suv: { wash: 0, nano: 0 } };
 
-// AMBIL DATA HARGA DARI JSON
-fetch('harga.json')
-    .then(r => r.json())
-    .then(data => {
-        prices.sedan.wash = parseInt(data.sedan.basic);
-        prices.sedan.nano = parseInt(data.sedan.nano);
-        prices.suv.wash = parseInt(data.suv.basic);
-        prices.suv.nano = parseInt(data.suv.nano);
-        updateUI();
-    }).catch(e => {
-        console.log("Error loading prices, check harga.json");
-    });
+// Harga Default mengikut jenis kenderaan
+const prices = {
+    sedan: { wash: 15, nano: 20 },
+    suv: { wash: 25, nano: 20 }
+};
 
 function selectVehicle(type) {
     currentType = type;
     document.getElementById('v-sedan').classList.toggle('active', type === 'sedan');
     document.getElementById('v-suv').classList.toggle('active', type === 'suv');
-    updateUI();
+    
+    // Kemaskini paparan harga
+    document.getElementById('price-wash').innerText = prices[type].wash;
+    document.getElementById('price-nano').innerText = prices[type].nano;
+    
+    calculate();
 }
 
 function toggleService(s) {
     activeServices[s] = !activeServices[s];
     const el = document.getElementById(s === 'wash' ? 'card-wash' : 'card-nano');
-    el.style.borderColor = activeServices[s] ? '#ccff00' : '#444';
-    el.style.background = activeServices[s] ? 'rgba(204,255,0,0.1)' : '#222';
-    calculate();
-}
-
-function updateUI() {
-    document.getElementById('price-wash').innerText = prices[currentType].wash;
-    document.getElementById('price-nano').innerText = prices[currentType].nano;
+    
+    if(activeServices[s]) {
+        el.style.borderColor = "#ccff00";
+        el.style.background = "rgba(204,255,0,0.1)";
+    } else {
+        el.style.borderColor = "#444";
+        el.style.background = "#222";
+    }
     calculate();
 }
 
 function calculate() {
     let total = 0;
     let selected = [];
-    if(activeServices.wash) { total += prices[currentType].wash; selected.push("Basic Wash"); }
-    if(activeServices.nano) { total += prices[currentType].nano; selected.push("Nano Coating"); }
+    
+    if(activeServices.wash) {
+        total += prices[currentType].wash;
+        selected.push("Basic Wash");
+    }
+    if(activeServices.nano) {
+        total += prices[currentType].nano;
+        selected.push("Nano Coating");
+    }
     
     document.getElementById('grand-total').innerText = "RM " + total;
     
-    // LINK WHATSAPP
-    let vehicle = currentType.toUpperCase();
-    let msg = `Salam XD Waterless, saya nak booking:\n\n🚗 Kenderaan: ${vehicle}\n✨ Servis: ${selected.join(" + ") || "Tiada"}\n💰 Total: RM${total}\n\n(Saya nak kumpul stamp Cuci 6 Free 1!)`;
+    // Mesej WhatsApp
+    let msg = `Salam XD Waterless, saya nak booking servis:\n\n🚗 Kenderaan: ${currentType.toUpperCase()}\n✨ Servis: ${selected.join(" + ") || "Belum dipilih"}\n💰 Total Estimasi: RM${total}\n\n(Saya nak kumpul stamp Cuci 6 Free 1!)`;
+    
     document.getElementById('btn-booking').href = `https://wa.me/60167003569?text=${encodeURIComponent(msg)}`;
 }
+
+// Jalankan fungsi awal
+selectVehicle('sedan');
