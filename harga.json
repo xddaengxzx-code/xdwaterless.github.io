@@ -1,11 +1,5 @@
 {
-  "sedan": {
-    "basic": 15
-  },
-  "suv": {
-    "basic": 25
-  },
-  "addon": {
-    "nano": 20
-  }
+  "sedan": { "basic": 15 },
+  "suv": { "basic": 25 },
+  "addon": { "nano": 20 }
 }
