@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XD Waterless | Mobile Car Wash</title>
-
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XD Waterless | Premium Mobile Detailing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
-
 <body>
+    <div class="container">
+        <header>
+            <img src="Untitled design_20251230_222907_0000.png" class="brand-logo" alt="Logo XD Waterless">
+            <h1>XD WATERLESS</h1>
+            <div id="promo" class="promo-box">MEMUATKAN PROMO...</div>
+        </header>
 
-  <div class="promo">🔥 PROMO: 6 KALI CUCI, 1 KALI FREE 🔥</div>
+        <div class="price-section">
+            <h3 class="section-title">1. PILIH JENIS KENDERAAN</h3>
+            <div class="option-grid">
+                <button class="opt-btn active" id="btn-sedan">🚗 SEDAN</button>
+                <button class="opt-btn" id="btn-suv">🚙 SUV / MPV</button>
+            </div>
+        </div>
 
-  <div class="container">
+        <div class="price-section">
+            <h3 class="section-title">2. PILIH SERVIS</h3>
+            <div class="service-list">
+                <div class="service-item">
+                    <label><input type="checkbox" class="service-check" value="wash"> Basic Wash</label>
+                    <span class="price-tag" id="disp-wash">RM -</span>
+                </div>
+                <div class="service-item">
+                    <label><input type="checkbox" class="service-check" value="nano"> Nano Coating</label>
+                    <span class="price-tag" id="disp-nano">RM -</span>
+                </div>
+            </div>
+            <div class="total-box">JUMLAH: RM <span id="total-price">0</span></div>
+        </div>
 
-    <header class="hero">
-      <h1>WATERLESS<br>CAR WASH</h1>
-      <p>Cuci Tanpa Air · Kilat Selamat · Mobile Service</p>
-    </header>
+        <img src="1767016706700.jpg" class="main-poster" alt="Poster XD Waterless">
 
-    <!-- VEHICLE -->
-    <div class="section-title">1. PILIH JENIS KENDERAAN</div>
-    <div class="vehicle">
-      <button class="active">🚗 SEDAN</button>
-      <button>🚙 SUV / MPV</button>
+        <div class="price-section">
+            <h3 class="section-title">BERI RATING & REVIEW</h3>
+            <form action="https://formspree.io/f/your-id" method="POST">
+                <select name="rating" class="input-field">
+                    <option value="5">⭐⭐⭐⭐⭐ (Terbaik)</option>
+                    <option value="4">⭐⭐⭐⭐ (Bagus)</option>
+                    <option value="3">⭐⭐⭐ (Biasa)</option>
+                </select>
+                <textarea name="message" class="input-field" placeholder="Tulis review anda..."></textarea>
+                <button type="submit" class="submit-btn">HANTAR REVIEW</button>
+            </form>
+        </div>
+
+        <a href="#" id="wa-booking" class="wa-button">TEMPAH VIA WHATSAPP</a>
     </div>
 
-    <!-- SERVICES -->
-    <div class="section-title">2. PILIH SERVIS</div>
-
-    <div class="service-card selected" data-price="15">
-      <h3>Basic Wash</h3>
-      <p>Cucian luar badan & cermin</p>
-      <div class="price">RM15</div>
-    </div>
-
-    <div class="service-card" data-price="35">
-      <span class="badge">POPULAR</span>
-      <h3>Nano Coating</h3>
-      <p>Kilat & perlindungan cat</p>
-      <div class="price">RM35</div>
-    </div>
-
-    <!-- SUMMARY -->
-    <div class="summary">
-      <p>Jumlah Bayaran</p>
-      <h2 id="total">RM 15</h2>
-      <button class="cta" id="confirmBtn">CONFIRM BOOKING</button>
-      <div class="note">
-        Waterless wash menggunakan produk pelincir tinggi & microfiber khas.
-      </div>
-    </div>
-
-  </div>
-
-  <!-- JS -->
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
