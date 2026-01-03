@@ -1,121 +1,64 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Waterless | Premium Mobile Detailing</title>
-    <style>
-        body { background-color: #0d0d0d; color: #ffffff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 10px; line-height: 1.4; }
-        .container { border: 2px solid #ccff00; padding: 15px; border-radius: 25px; max-width: 450px; margin: auto; background: #111; box-shadow: 0 0 25px rgba(204, 255, 0, 0.2); }
-        
-        /* Logo & Header */
-        .brand-logo { width: 120px; height: auto; margin-bottom: 5px; }
-        h1 { color: #ccff00; letter-spacing: 1px; margin: 5px 0; font-size: 1.6em; text-transform: uppercase; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XD Waterless | Mobile Car Wash</title>
 
-        .promo-box { background: linear-gradient(45deg, #ccff00, #99cc00); color: #000; padding: 12px; border-radius: 12px; font-weight: bold; font-size: 0.9em; margin-bottom: 15px; }
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-        /* Price Card Styles (Asal) */
-        .price-section { background: #1a1a1a; border-radius: 15px; border: 1px solid #333; margin-bottom: 15px; padding: 15px; }
-        .price-section h3 { color: #ccff00; margin: 0 0 12px 0; font-size: 0.85em; border-bottom: 1px solid #444; padding-bottom: 8px; text-transform: uppercase; }
-        
-        .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .price-card { background: #222; padding: 10px; border-radius: 10px; border: 1px solid #444; text-align: left; }
-        .price-card h4 { margin: 0 0 10px 0; font-size: 0.65em; color: #ccff00; text-align: center; background: #333; border-radius: 5px; padding: 5px; border: 1px solid #ccff00; height: 35px; display: flex; align-items: center; justify-content: center; }
-        
-        .p-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.72em; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
-        .p-val { font-weight: bold; color: #ccff00; }
-
-        /* Review Section */
-        .review-card { background: #222; padding: 10px; border-radius: 10px; margin-bottom: 10px; text-align: left; border-left: 3px solid #ccff00; }
-        .stars { color: #ccff00; font-size: 0.8em; }
-        .review-text { font-size: 0.75em; font-style: italic; margin: 5px 0; }
-
-        /* Forms */
-        input, textarea, select { width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px; border: 1px solid #333; background: #222; color: #fff; font-size: 0.8em; box-sizing: border-box; }
-        label { font-size: 0.7em; color: #ccff00; display: block; text-align: left; }
-
-        .main-poster { width: 100%; border-radius: 15px; border: 2px solid #ccff00; margin: 20px 0; }
-        .wa-button { background-color: #25d366; color: white; padding: 16px; text-decoration: none; border-radius: 50px; font-weight: bold; display: block; font-size: 1.1em; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-    </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <img src="Untitled design_20251230_222907_0000.png" alt="Logo XD Waterless" class="brand-logo">
-        <h1>XD WATERLESS</h1>
 
-        <div id="promo" class="promo-box">LOADING PROMO...</div>
+  <div class="promo">🔥 PROMO: 6 KALI CUCI, 1 KALI FREE 🔥</div>
 
-        <div class="price-section">
-            <h3>SENARAI HARGA SERVIS</h3>
-            <div class="price-grid">
-                <div class="price-card">
-                    <h4>🚗 SEDAN / HATCH</h4>
-                    <div class="p-row"><span>Basic Wash</span><span id="s-basic" class="p-val">-</span></div>
-                    <div class="p-row"><span>Nano Coat</span><span id="s-nano" class="p-val">-</span></div>
-                    <div class="p-row"><span>Engine Bay</span><span id="s-engine" class="p-val">-</span></div>
-                </div>
-                <div class="price-card">
-                    <h4>🚙 SUV / MPV</h4>
-                    <div class="p-row"><span>Basic Wash</span><span id="m-basic" class="p-val">-</span></div>
-                    <div class="p-row"><span>Nano Coat</span><span id="m-nano" class="p-val">-</span></div>
-                    <div class="p-row"><span>Engine Bay</span><span id="m-engine" class="p-val">-</span></div>
-                </div>
-            </div>
-            <div style="margin-top:10px; background:#ccff00; color:#000; padding:8px; border-radius:8px; font-weight:bold; font-size:0.8em;">
-                🔥 COMBO DETAILING: RM <span id="combo-val">-</span>
-            </div>
-        </div>
+  <div class="container">
 
-        <div class="price-section">
-            <h3>CARI RUNNER BERDEKATAN</h3>
-            <select>
-                <option>SHAH ALAM (HQ)</option>
-                <option>KLANG (COMING SOON)</option>
-                <option>SUBANG (COMING SOON)</option>
-            </select>
-        </div>
+    <header class="hero">
+      <h1>WATERLESS<br>CAR WASH</h1>
+      <p>Cuci Tanpa Air · Kilat Selamat · Mobile Service</p>
+    </header>
 
-        <img src="1767016706700.jpg" alt="Poster XD Waterless" class="main-poster">
-
-        <div class="price-section">
-            <h3>REVIEW PELANGGAN</h3>
-            <div class="review-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="review-text">"Kereta berkilat macam baru keluar showroom!"</p>
-                <p style="font-size:0.6em; color:#ccff00;">- Azlan (Civic)</p>
-            </div>
-
-            <form action="https://formspree.io/f/your-id" method="POST">
-                <label>Beri Bintang:</label>
-                <select name="rating">
-                    <option value="5">⭐⭐⭐⭐⭐</option>
-                    <option value="4">⭐⭐⭐⭐</option>
-                    <option value="3">⭐⭐⭐</option>
-                </select>
-                <textarea name="message" placeholder="Tulis review anda..." required></textarea>
-                <button type="submit" style="background:#ccff00; color:#000; border:none; padding:10px; width:100%; border-radius:8px; font-weight:bold; cursor:pointer;">HANTAR REVIEW</button>
-            </form>
-        </div>
-
-        <a href="https://wa.me/60167003569" class="wa-button">BOOKING SLOT SEKARANG</a>
-        
-        <p style="font-size: 0.6em; color: #555; margin-top: 20px;">DAENGXZX LEGACY | SHAH ALAM</p>
+    <!-- VEHICLE -->
+    <div class="section-title">1. PILIH JENIS KENDERAAN</div>
+    <div class="vehicle">
+      <button class="active">🚗 SEDAN</button>
+      <button>🚙 SUV / MPV</button>
     </div>
 
-    <script>
-        // Tarik data dari harga.json
-        fetch('harga.json')
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('promo').innerText = data.promo;
-                document.getElementById('s-basic').innerText = data.sedan.basic;
-                document.getElementById('s-nano').innerText = data.sedan.nano;
-                document.getElementById('s-engine').innerText = data.sedan.engine;
-                document.getElementById('m-basic').innerText = data.suv.basic;
-                document.getElementById('m-nano').innerText = data.suv.nano;
-                document.getElementById('m-engine').innerText = data.suv.engine;
-                document.getElementById('combo-val').innerText = data.combo;
-            }).catch(e => console.log("Check harga.json anda"));
-    </script>
+    <!-- SERVICES -->
+    <div class="section-title">2. PILIH SERVIS</div>
+
+    <div class="service-card selected" data-price="15">
+      <h3>Basic Wash</h3>
+      <p>Cucian luar badan & cermin</p>
+      <div class="price">RM15</div>
+    </div>
+
+    <div class="service-card" data-price="35">
+      <span class="badge">POPULAR</span>
+      <h3>Nano Coating</h3>
+      <p>Kilat & perlindungan cat</p>
+      <div class="price">RM35</div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary">
+      <p>Jumlah Bayaran</p>
+      <h2 id="total">RM 15</h2>
+      <button class="cta" id="confirmBtn">CONFIRM BOOKING</button>
+      <div class="note">
+        Waterless wash menggunakan produk pelincir tinggi & microfiber khas.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
