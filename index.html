@@ -2,8 +2,8 @@
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>XD Waterless | Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>XD Waterless | Premium Wash</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,24 +12,24 @@
         
         <header class="hero-section">
             <div class="poster-container">
-                <img src="Untitled design_20260102_145739_0000.png" class="main-poster" alt="XD Waterless">
+                <img src="Untitled design_20260102_145739_0000.png" class="main-poster" alt="XD Waterless Poster">
             </div>
         </header>
 
         <section class="booking-card">
-            <h3 class="label-neon">1. PILIH JENIS KENDERAAN</h3>
+            <h3 class="label-neon">1. JENIS KENDERAAN / <span class="en">VEHICLE TYPE</span></h3>
             <div class="vehicle-selector">
-                <button class="v-btn active" id="v-sedan" onclick="selectVehicle('sedan')">🚗 SEDAN / HATCH</button>
+                <button class="v-btn active" id="v-sedan" onclick="selectVehicle('sedan')">🚗 SEDAN</button>
                 <button class="v-btn" id="v-suv" onclick="selectVehicle('suv')">🚙 SUV / MPV</button>
             </div>
         </section>
 
         <section class="booking-card">
-            <h3 class="label-neon">2. PILIH SERVIS</h3>
+            <h3 class="label-neon">2. PILIH SERVIS / <span class="en">SELECT SERVICE</span></h3>
             <div class="service-box" id="card-wash" onclick="toggleService('wash')">
                 <div class="s-text">
                     <strong>Basic Wash</strong>
-                    <small>Cucian body luar, cermin & rim</small>
+                    <small>Body, cermin & rim / <span class="en">Body, glass & rims</span></small>
                 </div>
                 <div class="s-price">RM <span id="price-wash">15</span></div>
             </div>
@@ -38,15 +38,15 @@
                 <div class="pop-badge">POPULAR</div>
                 <div class="s-text">
                     <strong>Nano Coating</strong>
-                    <small>Kilat & perlindungan cat premium</small>
+                    <small>Kilat & pelindung / <span class="en">Shine & protection</span></small>
                 </div>
                 <div class="s-price">RM <span id="price-nano">20</span></div>
             </div>
         </section>
 
         <section class="booking-card loyalty-card">
-            <h3 class="label-neon">🎁 PROMO KESETIAAN</h3>
-            <p style="font-size: 0.85em; margin: 0 0 10px 0;">Cuci 6 kali, dapat <strong>1 KALI FREE!</strong></p>
+            <h3 class="label-neon">🎁 PROMO / <span class="en">LOYALTY</span></h3>
+            <p class="promo-blink">6 KALI CUCI, 1 KALI FREE!<br><small class="en-blink">WASH 6 TIMES, GET 1 FREE!</small></p>
             <div class="stamp-grid">
                 <div class="stamp filled">✓</div>
                 <div class="stamp filled">✓</div>
@@ -59,7 +59,7 @@
 
         <div class="footer-bar">
             <div class="total-info">
-                <span>ESTIMASI:</span>
+                <span>TOTAL ESTIMASI:</span>
                 <h2 id="grand-total">RM 0</h2>
             </div>
             <a href="#" id="btn-booking" class="btn-confirm">CONFIRM BOOKING</a>
