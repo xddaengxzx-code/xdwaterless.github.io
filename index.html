@@ -3,79 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD WATERLESS | XD DAENGXZX LAGACY</title>
-    <link rel="stylesheet" href="style.css">
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ms_MY/sdk.js#xfbml=1&version=v12.0"></script>
+    <title>XD Waterless | Premium Mobile Detailing</title>
+    <style>
+        body { background: #000; color: #fff; font-family: 'Arial', sans-serif; text-align: center; padding: 15px; }
+        .container { border: 2px solid #ccff00; border-radius: 25px; padding: 20px; max-width: 450px; margin: auto; background: #111; box-shadow: 0 0 20px rgba(204, 255, 0, 0.1); }
+        
+        .brand-logo { width: 100px; margin-bottom: 10px; }
+        h1 { color: #ccff00; font-size: 1.4em; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .tagline { font-size: 0.7em; color: #888; margin-bottom: 20px; }
+
+        .price-section { background: #1a1a1a; border-radius: 15px; padding: 15px; margin-bottom: 20px; border: 1px solid #333; text-align: left; }
+        .price-section h3 { color: #ccff00; font-size: 0.9em; margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
+
+        /* Booking Grid */
+        .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+        .opt-btn { background: #222; border: 1px solid #444; color: #fff; padding: 10px; border-radius: 10px; cursor: pointer; font-size: 0.8em; }
+        .opt-btn.active { border-color: #ccff00; background: rgba(204, 255, 0, 0.1); color: #ccff00; font-weight: bold; }
+
+        /* Service List */
+        .service-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #222; }
+        .service-info { flex: 1; }
+        .service-name { font-size: 0.85em; display: block; }
+        .service-desc { font-size: 0.6em; color: #666; }
+        .service-price { color: #ccff00; font-weight: bold; font-size: 0.9em; margin-right: 10px; }
+        
+        /* Summary Box */
+        .summary-box { background: #ccff00; color: #000; padding: 15px; border-radius: 12px; font-weight: bold; margin-top: 20px; }
+        .trust-signal { font-size: 0.6em; color: #666; margin-top: 15px; font-style: italic; line-height: 1.3; }
+
+        .btn-wa { background: #25d366; color: #fff; display: block; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 15px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); }
+    </style>
 </head>
 <body>
 
-<div class="app-container">
-    <div class="promo-banner">
-        🔥 PROMO: 6 KALI CUCI, 1 KALI FREE! 🔥
+<div class="container">
+    <img src="Untitled design_20251230_222907_0000.png" class="brand-logo" alt="XD Logo">
+    <h1>XD WATERLESS</h1>
+    <p class="tagline">Premium Mobile Detailing • Shah Alam</p>
+
+    <div class="price-section">
+        <h3>1. PILIH JENIS KENDERAAN</h3>
+        <div class="option-grid">
+            <button class="opt-btn active" onclick="setVehicle('sedan', this)">🚗 SEDAN / HATCH</button>
+            <button class="opt-btn" onclick="setVehicle('suv', this)">🚙 SUV / MPV</button>
+        </div>
     </div>
 
-    <header class="header">
-        <img src="Untitled design_20251230_222907_0000.png" class="main-logo">
-        <span class="step-label">XD DAENGXZX LAGACY</span>
-        <h1>WATERLESS<br><span style="color:var(--neon)">CAR WASH</span></h1>
-    </header>
-
-    <main class="main-layout">
-        <section class="selection-area">
-            <span class="step-label">1. Pilih Jenis Kenderaan</span>
-            <div class="vehicle-grid">
-                <div id="btnSedan" class="op-card active" onclick="setVehicle('Sedan')">
-                    <span>🚗</span>SEDAN
-                </div>
-                <div id="btnSUV" class="op-card" onclick="setVehicle('SUV/MPV')">
-                    <span>🚙</span>SUV / MPV
-                </div>
+    <div class="price-section">
+        <h3>2. PILIH SERVIS</h3>
+        
+        <div class="service-row" onclick="toggleService('basic', 15)">
+            <div class="service-info">
+                <span class="service-name">Basic Wash</span>
+                <span class="service-desc">Cucian body luar, cermin & rim sahaja.</span>
             </div>
+            <span class="service-price">RM<span id="p-basic">15</span></span>
+            <input type="checkbox" id="check-basic">
+        </div>
 
-            <span class="step-label">2. Pilih Servis</span>
-            <div class="service-list">
-                <div id="item-basic" class="service-item" onclick="toggleService('Basic Wash', 'item-basic')">
-                    <div><b>Basic Wash</b><br><small>Cucian premium luar & dalam</small></div>
-                    <div class="price-action">
-                        <span id="p-basic" class="price-tag">RM15</span>
-                        <div class="checkbox"></div>
-                    </div>
-                </div>
-                <div id="item-nano" class="service-item" onclick="toggleService('Nano Coating', 'item-nano')">
-                    <div><b>Nano Coating</b><br><small>Kilat & perlindungan cat</small></div>
-                    <div class="price-action">
-                        <span id="p-nano" class="price-tag">RM35</span>
-                        <div class="checkbox"></div>
-                    </div>
-                </div>
-                <div id="item-engine" class="service-item" onclick="toggleService('Engine Detailing', 'item-engine')">
-                    <div><b>Engine Detailing</b><br><small>Cucian rapi ruang enjin</small></div>
-                    <div class="price-action">
-                        <span id="p-engine" class="price-tag">RM45</span>
-                        <div class="checkbox"></div>
-                    </div>
-                </div>
+        <div class="service-row" onclick="toggleService('nano', 20)">
+            <div class="service-info">
+                <span class="service-name">⭐ Nano Coating (Popular)</span>
+                <span class="service-desc">Perlindungan cat & kesan hidrofobik (kalis air).</span>
             </div>
+            <span class="service-price">+RM<span id="p-nano">20</span></span>
+            <input type="checkbox" id="check-nano">
+        </div>
+    </div>
 
-            <span class="step-label" style="margin-top:40px;">3. Tinggalkan Komen / Review</span>
-            <div class="comment-box">
-                <div class="fb-comments" data-href="https://xddaengxzx-code.github.io/xdwaterless.github.io/" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
-            </div>
-        </section>
+    <div class="summary-box">
+        ESTIMASI JUMLAH: RM <span id="total-price">0</span>
+    </div>
 
-        <aside class="action-area">
-            <div class="summary-panel">
-                <span class="step-label" style="color:white; margin:0;">Summary Tempahan</span>
-                <div id="summary-text" class="summary-details">Sila pilih servis...</div>
-                <hr class="divider">
-                <div class="total-price" id="totalDisplay">RM 0</div>
-                <button class="btn-confirm" onclick="sendWhatsApp()">Confirm Booking</button>
-            </div>
-        </aside>
-    </main>
+    <a href="#" id="wa-link" class="btn-wa">CONFIRM BOOKING (WHATSAPP)</a>
+
+    <p class="trust-signal">
+        *Produk waterless kami menggunakan pelincir tinggi & microfiber khas. <br>
+        *Tidak sesuai untuk kenderaan yang terlalu berlumpur (heavy mud).<br>
+        *Engine cleaning hanya tersedia melalui permintaan khas (by request).
+    </p>
+
+    <p style="font-size: 0.5em; color: #444; margin-top: 20px;">DAENGXZX LEGACY | SHAH ALAM</p>
 </div>
 
-<script src="script.js"></script>
+<script>
+    let vehicle = 'sedan';
+    let total = 0;
+    let services = { basic: false, nano: false };
+
+    function setVehicle(type, btn) {
+        vehicle = type;
+        document.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Update harga visual berdasarkan kenderaan
+        document.getElementById('p-basic').innerText = (type === 'sedan') ? '15' : '25';
+        document.getElementById('p-nano').innerText = (type === 'sedan') ? '20' : '20'; // Nano kekal/ikut strategi
+        calculate();
+    }
+
+    function toggleService(service, price) {
+        let cb = document.getElementById('check-' + service);
+        cb.checked = !cb.checked;
+        services[service] = cb.checked;
+        calculate();
+    }
+
+    function calculate() {
+        let basePrice = (vehicle === 'sedan') ? 15 : 25;
+        total = 0;
+        let desc = `Booking XD Waterless (${vehicle.toUpperCase()}): `;
+        
+        if(services.basic) { total += basePrice; desc += "Basic Wash, "; }
+        if(services.nano) { total += 20; desc += "Nano Coating"; }
+
+        document.getElementById('total-price').innerText = total;
+        
+        let waMsg = encodeURIComponent(`${desc}. Total: RM${total}. Sila beritahu lokasi & masa.`);
+        document.getElementById('wa-link').href = `https://wa.me/60167003569?text=${waMsg}`;
+    }
+</script>
+
 </body>
 </html>
