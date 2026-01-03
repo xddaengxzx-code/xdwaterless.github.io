@@ -3,89 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XD Waterless | Booking</title>
-
+  <title>XD Waterless App</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- PROMO -->
-  <div class="promo-blink">
-    🔥 PROMO: CUCI 6 KALI • FREE 1 KALI 🔥<br>
-    🔥 PROMO: WASH 6 TIMES • GET 1 FREE 🔥
+<!-- PROMO -->
+<div class="promo-blink">
+  🔥 PROMO: CUCI 6 KALI • FREE 1 KALI 🔥<br>
+  🔥 WASH 6 TIMES • GET 1 FREE 🔥
+</div>
+
+<!-- STEP 1 -->
+<section class="app-step active" id="step1">
+  <h1>WATERLESS CAR WASH</h1>
+  <p>Kilat dalam 20 minit · Kami datang ke lokasi anda</p>
+
+  <h3>Pilih Kenderaan</h3>
+  <div class="vehicle">
+    <button class="vehicle-btn active" data-vehicle="sedan">🚗 Sedan</button>
+    <button class="vehicle-btn" data-vehicle="suv">🚙 SUV / MPV</button>
   </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>WATERLESS CAR WASH</h1>
-      <p>
-        Kilat dalam 20 minit · Kami datang ke lokasi anda<br>
-        Shine in 20 minutes · We come to you
-      </p>
-      <a href="#booking" class="hero-btn">BOOK NOW / TEMPAH</a>
+  <h3>Pilih Servis</h3>
+  <div class="services">
+    <div class="service-card selected" data-service="basic">
+      <strong>Basic Wash</strong>
+      <small>Exterior body & glass</small>
     </div>
-  </section>
-
-  <!-- LOGO BACKGROUND -->
-  <section class="logo-bg">
-    <div class="logo-bg-overlay"></div>
-    <div class="logo-bg-content">
-      <h2>XD WATERLESS</h2>
-      <p>
-        Cuci kereta tanpa air · Selamat untuk cat<br>
-        Waterless wash · Safe for paint
-      </p>
+    <div class="service-card" data-service="nano">
+      <span class="badge">+RM20</span>
+      <strong>Nano Coating</strong>
+      <small>Shine & protection</small>
     </div>
-  </section>
+  </div>
 
-  <!-- BOOKING -->
-  <section class="booking" id="booking">
+  <div class="total-box">
+    <span>Jumlah / Total</span>
+    <h2 id="total">RM 15</h2>
+  </div>
 
-    <h3>Pilih Kenderaan / Select Vehicle</h3>
-    <div class="vehicle">
-      <button class="vehicle-btn active" data-vehicle="sedan">🚗 SEDAN</button>
-      <button class="vehicle-btn" data-vehicle="suv">🚙 SUV / MPV</button>
-    </div>
+  <button class="cta" onclick="goStep(2)">NEXT</button>
+</section>
 
-    <h3>Pilih Servis / Select Service</h3>
-    <div class="services">
-      <div class="service-card selected" data-service="basic">
-        <h4>Basic Wash</h4>
-        <p>
-          Cuci luar badan & cermin<br>
-          Exterior body & glass
-        </p>
-      </div>
+<!-- STEP 2 -->
+<section class="app-step" id="step2">
+  <h2>Sahkan Tempahan</h2>
 
-      <div class="service-card" data-service="nano">
-        <span class="badge">+RM20</span>
-        <h4>Nano Coating</h4>
-        <p>
-          Kilat & perlindungan cat<br>
-          Shine & paint protection
-        </p>
-      </div>
-    </div>
+  <input id="custName" placeholder="Nama / Name" />
+  <input id="custPhone" placeholder="WhatsApp (contoh: 0123456789)" />
+  <input id="custCar" placeholder="Model Kereta (Myvi, City...)" />
 
-    <div class="total-box">
-      <p>Jumlah Bayaran / Total</p>
-      <h2 id="total">RM 0</h2>
-    </div>
+  <button class="cta" onclick="submitBooking()">
+    CONFIRM & WHATSAPP
+  </button>
 
-    <button class="cta" id="confirmBtn">
-      CONFIRM BOOKING (WHATSAPP)
-    </button>
+  <button class="back" onclick="goStep(1)">← Kembali</button>
+</section>
 
-    <p class="note">
-      Waterless wash menggunakan produk pelincir tinggi & microfiber khas.<br>
-      Uses high-lubrication products & special microfiber.
-    </p>
-
-  </section>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
