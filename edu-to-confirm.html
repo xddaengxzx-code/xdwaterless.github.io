@@ -8,191 +8,182 @@
 <style>
 :root{
   --bg:#0b0b0b;
-  --neon:#9CFF00;
+  --card:#121212;
+  --green:#9CFF00;
   --text:#eaeaea;
   --muted:#bdbdbd;
-  --box:#121212;
 }
-
 *{box-sizing:border-box}
-
 body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;
   line-height:1.6;
 }
-
-.header{
-  text-align:center;
-  padding:40px 16px 20px;
+.wrap{max-width:820px;margin:auto;padding:24px}
+.hero{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
+  url("https://raw.githubusercontent.com/xddaengxzx-code/xdwaterless.github.io/main/banner.jpg")
+  center/cover no-repeat;
+  border-radius:18px;
+  padding:48px 24px;
+  margin-bottom:30px;
 }
+.hero h1{color:var(--green);margin:0}
+.hero p{margin:6px 0 0;font-size:14px}
 
-.header h1{
-  color:var(--neon);
-  margin:0;
-  letter-spacing:1px;
-}
-
-.header p{
-  color:var(--muted);
-  margin-top:6px;
-  font-size:14px;
-}
-
-.section{
-  max-width:720px;
-  margin:0 auto;
-  padding:20px 16px;
-}
-
-h2{
-  margin-bottom:12px;
-  color:#fff;
-}
+.section{margin-bottom:32px}
+.section h2{color:var(--green);margin-bottom:12px}
 
 .box{
-  background:var(--box);
-  border:1px solid rgba(156,255,0,.25);
+  background:var(--card);
+  border:1px solid #1f1f1f;
   border-radius:14px;
-  padding:16px;
-  margin-bottom:14px;
+  padding:18px;
 }
 
-ul{
-  padding-left:18px;
-}
+.price{color:var(--green);font-weight:700;margin-top:8px}
 
-.price{
-  margin-top:10px;
-  font-weight:bold;
-  color:var(--neon);
+.badge{
+  display:inline-block;
+  background:var(--green);
+  color:#000;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:8px;
 }
 
 .btn{
-  display:block;
-  margin-top:18px;
-  text-align:center;
-  background:var(--neon);
+  display:inline-block;
+  background:var(--green);
   color:#000;
   text-decoration:none;
-  padding:14px;
-  border-radius:12px;
+  padding:14px 20px;
+  border-radius:30px;
   font-weight:800;
+  text-align:center;
 }
 
-.muted{color:var(--muted);font-size:14px}
-.center{text-align:center}
+.btn.alt{
+  background:#1c1c1c;
+  color:var(--green);
+  border:1px solid var(--green);
+}
+
+.choice{display:flex;gap:12px;justify-content:center}
 </style>
 </head>
 
 <body>
+<div class="wrap">
 
-<!-- HEADER -->
-<div class="header">
+<!-- HERO -->
+<div class="hero">
   <h1>XD WATERLESS</h1>
   <p>Cuci Tanpa Air • Mobile • 20–30 Minit</p>
 </div>
 
-<!-- 1. APA ITU -->
+<!-- APA ITU -->
 <div class="section">
-  <h2>1. Apa itu Waterless?</h2>
-  <div class="box">
-    <p>
-      <strong>Waterless</strong ialah cara cuci kereta <strong>tanpa guna air paip</strong>.
-      Cecair khas digunakan untuk melonggarkan kotoran dan
-      <strong>melindungi cat</strong> sebelum dilap perlahan satu arah guna kain microfiber.
-    </p>
-    <p class="muted">
-      Sesuai untuk kereta <strong>tak terlalu kotor</strong> & penjagaan harian.
-    </p>
-  </div>
+<h2>1. Apa Itu Waterless?</h2>
+<div class="box">
+Waterless ialah kaedah cuci kereta <b>tanpa guna air paip</b>.  
+Cecair khas melonggarkan kotoran dan melindungi cat sebelum dilap microfiber satu arah.
+
+<br><br>
+<b>Sesuai untuk:</b> kereta tidak terlalu kotor & penjagaan harian.
+</div>
 </div>
 
-<!-- 2. FAQ -->
+<!-- FAQ -->
 <div class="section">
-  <h2>2. Soalan Lazim</h2>
+<h2>2. Soalan Lazim</h2>
+<div class="box">
+<b>Selamat ke untuk cat?</b><br>
+Ya. Teknik lap satu arah kurangkan risiko calar.<br><br>
 
-  <div class="box">
-    <strong>Selamat ke untuk cat?</strong><br>
-    Ya. Teknik lap satu arah digunakan untuk kurangkan risiko calar.
-  </div>
+<b>Kereta kotor boleh buat?</b><br>
+Habuk & kotoran ringan sahaja. Bukan lumpur tebal.<br><br>
 
-  <div class="box">
-    <strong>Kereta kotor boleh buat?</strong><br>
-    Sesuai untuk habuk & kotoran ringan. <strong>Bukan</strong> untuk lumpur tebal.
-  </div>
-
-  <div class="box">
-    <strong>Berapa lama siap?</strong><br>
-    Sekitar 20–30 minit ikut saiz & keadaan kereta.
-  </div>
+<b>Berapa lama siap?</b><br>
+±20–30 minit ikut saiz & keadaan.
+</div>
 </div>
 
-<!-- 3. HARGA -->
+<!-- HARGA -->
 <div class="section">
-  <h2>3. Harga Servis</h2>
-
-  <div class="box">
-    <h3>XD BASIC SHINE</h3>
-    <ul class="muted">
-      <li>Cuci luaran tanpa air</li>
-      <li>Wax asas</li>
-      <li>Kilat tayar</li>
-    </ul>
-    <div class="price">RM15 (Sedan) • RM25 (SUV / MPV)</div>
-  </div>
+<h2>3. Harga Servis</h2>
+<div class="box">
+<b>XD BASIC SHINE</b>
+<ul>
+<li>Cuci luaran tanpa air</li>
+<li>Wax asas</li>
+<li>Kilat tayar</li>
+</ul>
+<div class="price">RM15 (Sedan) · RM25 (SUV / MPV)</div>
+</div>
 </div>
 
-<!-- 4. TAMBAH NANO -->
+<!-- NANO -->
 <div class="section">
-  <h2>4. Kenapa Perlu Tambah Nano?</h2>
+<h2>4. Kenapa Tambah Nano?</h2>
+<div class="box">
+<b>Basic</b> = bersih & kilat sementara  
+<b>Nano</b> = lapisan tambahan, lebih licin & tahan lama
 
-  <div class="box">
-    <p>
-      <strong>Basic</strong> fokus bersih & kilat sementara.<br>
-      <strong>Nano</strong> beri lapisan tambahan supaya cat lebih licin & kilat tahan lama.
-    </p>
-    <ul class="muted">
-      <li>Kurang lekat habuk</li>
-      <li>Lebih senang cuci lain kali</li>
-      <li>Tambah perlindungan cat</li>
-    </ul>
-    <div class="price">Tambah RM20 sahaja</div>
-    <p class="muted">🎁 Percuma rawatan cermin anti-hujan</p>
-  </div>
+<ul>
+<li>Kurang lekat habuk</li>
+<li>Lebih senang cuci lain kali</li>
+<li>Tambah perlindungan cat</li>
+</ul>
+
+<div class="price">Tambah RM20 sahaja</div>
+🎁 Percuma rawatan cermin anti-hujan
+</div>
 </div>
 
 <!-- 🔥 PROMO -->
 <div class="section">
-  <h2>🔥 Promo Terhad</h2>
+<h2>🔥 PROMO TERHAD</h2>
 
-  <div class="box">
-    <strong>👥 Duo Deals</strong><br>
-    Datang berdua (1 lokasi) → <strong>Nano harga Basic</strong>
-  </div>
-
-  <div class="box">
-    <strong>🌧️ Rain Warranty</strong><br>
-    Hujan dalam 24 jam → <strong>Cuci semula (1x)</strong>
-  </div>
-
-  <div class="box">
-    <strong>🎁 10 Orang Terawal</strong><br>
-    <strong>FREE Engine Refresh</strong>
-  </div>
-
-  <a class="btn"
-     href="https://wa.me/60167003569?text=Hi%20H.O.D!%20Saya%20nak%20booking%20PROMO%20XD%20WATERLESS.%0APakej:%20%0ALokasi:%20">
-     🚀 BOOK PROMO SEKARANG
-  </a>
-
-  <p class="center muted">
-    Dengan booking, anda bersetuju dengan
-    <a href="disclaimer.html" style="color:var(--neon)">Disclaimer Rasmi</a>
-  </p>
+<div class="box">
+<span class="badge">JIMAT RM20</span><br>
+<b>Member Get Member</b><br>
+Bawa 1 kawan (1 lokasi) → <b>Nano Armor harga Basic</b>
 </div>
 
+<br>
+
+<div class="box">
+<span class="badge">FIRST 10</span><br>
+<b>10 Booking Terawal</b><br>
+🎁 <b>Free Engine Refresh</b> (nilai RM30)
+</div>
+
+<br>
+
+<div class="box">
+<span class="badge">RAIN WARRANTY</span><br>
+Hujan dalam 24 jam selepas Nano?  
+<b>Cuci semula 1x percuma</b>
+</div>
+</div>
+
+<!-- CTA -->
+<div class="section">
+<h2>5. Pilihan Anda</h2>
+<p class="muted" style="text-align:center">Pilih satu. Terus WhatsApp.</p>
+
+<div class="choice">
+<a class="btn alt" href="https://wa.me/60167003569?text=Hi%20H.O.D,%20saya%20nak%20booking%20XD%20Basic%20Shine.%0ALokasi:">Basic</a>
+
+<a class="btn" href="https://wa.me/60167003569?text=Hi%20H.O.D,%20saya%20nak%20booking%20XD%20Nano%20Armor.%0ALokasi:">Nano</a>
+</div>
+</div>
+
+</div>
 </body>
 </html>
