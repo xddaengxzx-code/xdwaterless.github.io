@@ -1,5 +1,15 @@
 {
-  "sedan": { "basic": 15 },
-  "suv": { "basic": 25 },
-  "addon": { "nano": 20 }
+  "cuci_biasa": {
+    "S": 20,
+    "M": 30,
+    "L": 40,
+    "XL": 50
+  },
+  "wash_wax_slick_bana": {
+    "S": 25,
+    "M": 35,
+    "L": 45,
+    "XL": 55
+  },
+  "note": "Harga ikut saiz & keadaan kereta. Kereta terlalu besar atau terlalu kotor akan dimaklumkan dahulu."
 }
