@@ -1,34 +1,180 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Produk & Hasil | XD Waterless</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- LIGHT / MODERN (Windows 11 feel) -->
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e5e7eb;
+      --accent:#22c55e; /* hijau bersih */
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.6;
+    }
+    .app{
+      max-width:1100px;
+      margin:auto;
+      padding:20px;
+    }
+    h1,h2{margin:.2em 0}
+    h1{font-size:clamp(22px,4vw,34px)}
+    h2{font-size:clamp(18px,3vw,24px)}
+    p{color:var(--muted)}
+
+    /* CARD */
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:16px;
+    }
+    .grid{
+      display:grid;
+      gap:16px;
+    }
+    @media (min-width:768px){
+      .grid-2{grid-template-columns:1fr 1fr}
+      .grid-3{grid-template-columns:1fr 1fr 1fr}
+    }
+
+    /* IMAGE */
+    img{
+      width:100%;
+      height:auto;
+      border-radius:12px;
+      display:block;
+    }
+
+    /* HEADER IMAGE (kereta hijau) */
+    .hero{
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      margin-bottom:20px;
+    }
+
+    /* PRICE */
+    .price{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .badge{
+      background:#ecfeff;
+      color:#065f46;
+      border:1px solid #bbf7d0;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    /* BUTTON */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:14px 18px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid var(--line);
+      background:#f8fafc;
+      color:var(--text);
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:#022c22;
+      border-color:#86efac;
+    }
+    .cta{
+      position:sticky;
+      bottom:14px;
+      display:flex;
+      justify-content:flex-end;
+      pointer-events:none;
+    }
+    .cta a{pointer-events:auto}
+
+    /* REVIEW */
+    .review{
+      font-size:14px;
+      color:#0f172a;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="app">
 
-<div class="app">
-  <h2>Produk Digunakan</h2>
+    <!-- HERO / GAMBAR KERETA HIJAU (JANGAN TUKAR NAMA FAIL) -->
+    <div class="hero">
+      <img src="Untitled_design_20260102_145739_0000.png" alt="XD Waterless Carwash">
+    </div>
 
-  <div class="card center">
-    <img src="file_0000000092e87208968d22fdb0ee59ce.png" class="product">
-    <p><strong>Slick Bana 🍌</strong><br>
-    Formula khas Waterless Wash + Wax</p>
+    <h1>Produk Digunakan</h1>
+
+    <!-- PRODUK SLICK BANA -->
+    <div class="grid grid-2">
+      <div class="card">
+        <img src="file_0000000092e87208968d22fdb0ee59ce.png" alt="Slick Bana">
+      </div>
+      <div class="card">
+        <h2>Slick Bana 🍌</h2>
+        <p>Formula khas <strong>Waterless Wash + Wax</strong> untuk hasil lebih licin & berkilat.</p>
+        <div class="price">
+          <span class="badge">Add-On Premium</span>
+          <strong>Bermula RM25*</strong>
+        </div>
+        <p style="margin-top:8px">*Harga ikut <strong>model & saiz kenderaan</strong>. Sila tanya untuk pengesahan.</p>
+      </div>
+    </div>
+
+    <!-- BEFORE / AFTER -->
+    <h2 style="margin-top:28px">Before / After</h2>
+    <div class="card">
+      <img src="IMG_20260113_015550.jpg" alt="Before After XD Waterless">
+    </div>
+
+    <!-- REVIEW (SCREENSHOT) -->
+    <h2 style="margin-top:28px">Apa Kata Customer</h2>
+    <div class="grid grid-3">
+      <div class="card review">
+        <img src="Screenshot_2026-01-14-12-32-37-233_com.whatsapp.w4b-edit.jpg" alt="Customer Review">
+      </div>
+      <div class="card review">
+        <img src="Screenshot_2026-01-14-12-32-37-233_com.whatsapp.w4b-edit.jpg" alt="Customer Review">
+      </div>
+      <div class="card review">
+        <img src="Screenshot_2026-01-14-12-32-37-233_com.whatsapp.w4b-edit.jpg" alt="Customer Review">
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <a class="btn btn-primary" href="https://wa.me/60167003569">
+        WhatsApp Kami
+      </a>
+    </div>
+
   </div>
-
-  <h2>Before / After</h2>
-
-  <div class="card">
-    <img src="IMG_20260113_015550.jpg" class="responsive">
-  </div>
-
-  <a href="https://wa.me/60167003569" class="btn full">
-    Book Servis Sekarang
-  </a>
-</div>
-
-<a class="wa-float" href="https://wa.me/60167003569" target="_blank">WhatsApp</a>
-
 </body>
 </html>
