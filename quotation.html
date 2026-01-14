@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <title>Kira Harga – XD WATERLESS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harga Servis | XD Waterless</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Kira Harga Servis</h2>
+<div class="app">
+  <h2>Pakej Servis</h2>
 
-<label>Servis:</label><br>
-<select id="servis">
-  <option value="">-- Pilih --</option>
-  <option value="cuci_biasa">Cuci Biasa</option>
-  <option value="wash_wax_slick_bana">Wash & Wax Slick Bana</option>
-</select>
+  <div class="card highlight">
+    <h3>Basic Wash + Wax</h3>
+    <p>
+      Menggunakan <strong>Slick Bana 🍌</strong><br>
+      Kilat, licin & perlindungan asas
+    </p>
+    <h1>RM25*</h1>
+    <p class="note">
+      *Harga bermula.  
+      Bergantung kepada saiz & model kereta.
+    </p>
+  </div>
 
-<br><br>
+  <div class="card">
+    <h3>Add-On: Slick Bana Extra</h3>
+    <ul>
+      <li>✨ Lebih licin & wet look</li>
+      <li>✨ Kurang lekat habuk</li>
+      <li>✨ Tahan lebih lama</li>
+    </ul>
+    <p class="note">
+      Harga add-on akan dimaklumkan ikut model kereta.
+    </p>
+  </div>
 
-<label>Saiz Kenderaan:</label><br>
-<select id="size">
-  <option value="">-- Pilih --</option>
-  <option value="S">Small (S)</option>
-  <option value="M">Medium (M)</option>
-  <option value="L">Large (L)</option>
-  <option value="XL">Extra Large (XL)</option>
-</select>
+  <a href="https://wa.me/60167003569" class="btn full">
+    Tanya Harga Ikut Model Kereta
+  </a>
+</div>
 
-<br><br>
+<a class="wa-float" href="https://wa.me/60167003569" target="_blank">WhatsApp</a>
 
-<button onclick="kiraHarga()">Kira Harga</button>
-
-<p id="hargaOutput"></p>
-
-<script src="script.js"></script>
 </body>
 </html>
