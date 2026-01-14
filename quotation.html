@@ -1,47 +1,157 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Harga Servis | XD Waterless</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e5e7eb;
+      --accent:#22c55e;
+      --soft:#f8fafc;
+      --shadow:0 10px 28px rgba(0,0,0,.08);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.6;
+    }
+    .app{
+      max-width:980px;
+      margin:auto;
+      padding:20px;
+    }
+    h1{font-size:clamp(22px,4vw,32px);margin:0 0 6px}
+    h2{font-size:clamp(18px,3vw,24px);margin:24px 0 12px}
+    h3{margin:0 0 6px}
+    p{color:var(--muted);margin:0}
+    ul{padding-left:18px;margin:8px 0}
+    li{margin:6px 0}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:16px;
+    }
+    .grid{
+      display:grid;
+      gap:16px;
+    }
+    @media(min-width:768px){
+      .grid-2{grid-template-columns:1fr 1fr}
+    }
+
+    .highlight{
+      border:2px solid #bbf7d0;
+      background:#ecfeff;
+    }
+
+    .price{
+      font-size:28px;
+      font-weight:800;
+      margin-top:8px;
+    }
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#dcfce7;
+      color:#065f46;
+      border:1px solid #86efac;
+      font-weight:700;
+      font-size:13px;
+    }
+    .note{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:8px;
+    }
+
+    .cta{
+      margin-top:28px;
+      display:flex;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 18px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:800;
+      background:var(--accent);
+      color:#022c22;
+      border:1px solid #86efac;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="app">
 
-<div class="app">
-  <h2>Pakej Servis</h2>
+    <h1>Harga Servis</h1>
+    <p>Struktur harga telus. Mesra bajet. Ikut saiz & keadaan kenderaan.</p>
 
-  <div class="card highlight">
-    <h3>Basic Wash + Wax</h3>
-    <p>
-      Menggunakan <strong>Slick Bana 🍌</strong><br>
-      Kilat, licin & perlindungan asas
-    </p>
-    <h1>RM25*</h1>
-    <p class="note">
-      *Harga bermula.  
-      Bergantung kepada saiz & model kereta.
-    </p>
+    <!-- PAKEJ UTAMA -->
+    <h2>Pakej Servis</h2>
+    <div class="grid grid-2">
+
+      <div class="card highlight">
+        <span class="badge">PAKEJ POPULAR</span>
+        <h3 style="margin-top:10px">Basic Wash + Wax</h3>
+        <p>
+          Menggunakan <strong>Slick Bana 🍌</strong><br>
+          Kilat, licin & perlindungan asas.
+        </p>
+        <div class="price">RM25*</div>
+        <p class="note">
+          *Harga bermula. Bergantung kepada saiz & model kereta.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Add-On: Slick Bana Extra 🍌</h3>
+        <ul>
+          <li>✨ Lebih licin & wet look</li>
+          <li>✨ Kurang lekat habuk</li>
+          <li>✨ Perlindungan tahan lebih lama</li>
+        </ul>
+        <p class="note">
+          Harga add-on dimaklumkan selepas tahu model & saiz kenderaan.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- EDUKASI RINGKAS -->
+    <h2>Kenapa Harga Ikut Saiz?</h2>
+    <div class="card">
+      <ul>
+        <li>Saiz kereta = penggunaan produk berbeza</li>
+        <li>Permukaan lebih besar = masa kerja lebih lama</li>
+        <li>Kami kekalkan kualiti sama untuk semua kenderaan</li>
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <a class="btn" href="https://wa.me/60167003569">
+        Tanya Harga & Book Sekarang
+      </a>
+    </div>
+
   </div>
-
-  <div class="card">
-    <h3>Add-On: Slick Bana Extra</h3>
-    <ul>
-      <li>✨ Lebih licin & wet look</li>
-      <li>✨ Kurang lekat habuk</li>
-      <li>✨ Tahan lebih lama</li>
-    </ul>
-    <p class="note">
-      Harga add-on akan dimaklumkan ikut model kereta.
-    </p>
-  </div>
-
-  <a href="https://wa.me/60167003569" class="btn full">
-    Tanya Harga Ikut Model Kereta
-  </a>
-</div>
-
-<a class="wa-float" href="https://wa.me/60167003569" target="_blank">WhatsApp</a>
-
 </body>
 </html>
