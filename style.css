@@ -1,8 +1,12 @@
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:system-ui, sans-serif;
-  background:#0b0f14;
-  color:#fff;
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  background:#ffffff;
+  color:#111111;
   overflow:hidden;
 }
 
@@ -18,87 +22,94 @@ body{
   display:none;
   align-items:center;
   justify-content:center;
-  padding:20px;
+  padding:16px;
 }
-
 .slide.active{display:flex}
 
-.content{
-  max-width:420px;
+.hero-img{
+  position:absolute;
+  inset:0;
   width:100%;
-  background:#111827;
-  border-radius:18px;
-  padding:22px;
-  text-align:center;
-  box-shadow:0 20px 40px rgba(0,0,0,.4);
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
 }
 
-.hero-img{
+.card{
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:18px; /* Windows 11 */
+  padding:20px;
+  max-width:420px;
   width:100%;
-  border-radius:14px;
-  margin-bottom:15px;
+  text-align:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+.hero-card{
+  background:rgba(255,255,255,.92);
 }
 
 h1,h2{margin-bottom:10px}
-p{opacity:.85;margin-bottom:12px}
-ul{text-align:left;margin:12px 0}
-li{margin-bottom:6px}
+p{color:#444}
 
-.price-box{
-  background:#0f172a;
-  padding:14px;
-  border-radius:12px;
-  margin-bottom:12px;
+.media{
+  width:100%;
+  border-radius:14px;
+  margin-top:10px;
 }
+
 .price{
+  margin:12px 0;
+}
+.amount{
   font-size:28px;
   font-weight:700;
+  margin:6px 0;
 }
 
 .addon{
   display:flex;
-  gap:10px;
+  gap:12px;
   align-items:center;
+  margin-top:12px;
   text-align:left;
 }
-.addon img{
+.bottle{
   width:70px;
-  border-radius:10px;
-}
-
-.review{
-  background:#0f172a;
-  padding:12px;
-  border-radius:10px;
-  margin-top:10px;
-  font-size:14px;
-}
-
-button{
-  padding:10px 16px;
-  border:none;
   border-radius:12px;
-  background:#1f2937;
-  color:#fff;
 }
 
-button:hover{opacity:.85}
+.note{
+  font-size:13px;
+  color:#666;
+}
+
+.btn{
+  padding:10px 16px;
+  border-radius:12px;
+  border:1px solid #d1d5db;
+  background:#f9fafb;
+  margin:4px;
+}
 
 .nav{
+  margin-top:14px;
   display:flex;
   justify-content:space-between;
-  margin-top:16px;
 }
-
-.next{background:#2563eb}
-.prev{background:#374151}
 
 .wa-btn{
   display:inline-block;
-  background:#22c55e;
-  color:#000;
+  margin-top:10px;
+  background:#111111;
+  color:#ffffff;
   padding:14px 18px;
   border-radius:14px;
-  font-weight:700;
   text-decoration:none;
+  font-weight:700;
+}
+
+@media (min-width:768px){
+  .card{max-width:520px}
 }
