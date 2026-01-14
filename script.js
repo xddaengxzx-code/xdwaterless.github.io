@@ -1,64 +1,21 @@
-let selectedVehicle="sedan";
-let selectedService="basic";
-let prices={};
+let hargaData = {};
 
 fetch("harga.json")
-  .then(r=>r.json())
-  .then(d=>{
-    prices=d;
-    updateTotal();
+  .then(res => res.json())
+  .then(data => {
+    hargaData = data;
   });
 
-function updateTotal(){
-  let total = prices[selectedVehicle].basic;
-  if(selectedService==="nano") total+=prices.addon.nano;
-  document.getElementById("total").innerText="RM "+total;
-}
+function kiraHarga() {
+  const servis = document.getElementById("servis").value;
+  const size = document.getElementById("size").value;
+  const output = document.getElementById("hargaOutput");
 
-document.querySelectorAll(".vehicle-btn").forEach(b=>{
-  b.onclick=()=>{
-    document.querySelectorAll(".vehicle-btn").forEach(x=>x.classList.remove("active"));
-    b.classList.add("active");
-    selectedVehicle=b.dataset.vehicle;
-    updateTotal();
-  };
-});
-
-document.querySelectorAll(".service-card").forEach(c=>{
-  c.onclick=()=>{
-    document.querySelectorAll(".service-card").forEach(x=>x.classList.remove("selected"));
-    c.classList.add("selected");
-    selectedService=c.dataset.service;
-    updateTotal();
-  };
-});
-
-function submitBooking(){
-  const name=custName.value;
-  const phone=custPhone.value;
-  const car=custCar.value;
-  if(!name||!phone||!car){
-    alert("Sila isi semua maklumat");
+  if (!servis || !size) {
+    output.innerText = "Sila pilih servis & saiz kenderaan.";
     return;
   }
 
-  let total = prices[selectedVehicle].basic;
-  let service="Basic Wash";
-  if(selectedService==="nano"){
-    total+=prices.addon.nano;
-    service+=" + Nano";
-  }
-
-  const msg =
-`Tempahan XD Waterless
-Nama: ${name}
-WhatsApp: ${phone}
-Kereta: ${car}
-Kenderaan: ${selectedVehicle}
-Servis: ${service}
-Jumlah: RM ${total}
-
-PROMO: Cuci 6 kali, FREE 1 kali`;
-
-  window.open("https://wa.me/60167003569?text="+encodeURIComponent(msg));
+  const harga = hargaData[servis][size];
+  output.innerText = `Harga: RM${harga}`;
 }
