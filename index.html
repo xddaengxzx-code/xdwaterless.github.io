@@ -1,36 +1,101 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XD Waterless | Mobile Car Wash</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XD Waterless</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<div class="app">
+<div class="slider" id="slider">
 
-  <section class="hero">
-    <img src="Untitled_design_20260102_145739_0000.png" alt="XD Waterless Carwash">
-    <div class="hero-text">
+  <!-- SLIDE 1 -->
+  <section class="slide">
+    <img class="hero-bg" src="Untitled_design_20260102_145739_0000.png" alt="XD Waterless">
+    <div class="overlay">
       <h1>WATERLESS CAR WASH</h1>
       <p>
-        Cuci kereta tanpa air.  
-        Jimat masa, kemas & selamat untuk maintenance harian.<br>
-        <span>No hose. No mess. Clean & shine.</span>
+        Cuci kereta tanpa air. Jimat masa, kemas & selamat.<br>
+        <span>No water. Clean & shine.</span>
       </p>
-      <div class="hero-btn">
-        <a href="faq.html" class="btn">Apa itu Waterless?</a>
-        <a href="quotation.html" class="btn outline">Lihat Harga</a>
-      </div>
+    </div>
+    <div class="nav">
+      <button class="btn next">NEXT</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="slide">
+    <h2>Apa itu Waterless?</h2>
+    <p>
+      Kaedah cuci tanpa air untuk kereta yang tidak terlalu kotor.<br>
+      <span>Safe method for daily maintenance.</span>
+    </p>
+    <ul>
+      <li>✔ Cepat & jimat masa</li>
+      <li>✔ Selamat untuk cat</li>
+      <li>✖ Tidak sesuai untuk lumpur tebal</li>
+    </ul>
+    <div class="nav">
+      <button class="btn prev">PREV</button>
+      <button class="btn next">NEXT</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide">
+    <h2>Harga Servis</h2>
+    <div class="card">
+      <h3>Basic Wash & Wax</h3>
+      <h1>RM25*</h1>
+      <p>*Harga bermula. Ikut model & saiz kereta.</p>
+    </div>
+    <div class="card">
+      <h3>Add-on: Slick Bana 🍌</h3>
+      <p>Kilat tambahan & rasa licin.</p>
+      <p><small>Harga ikut model kereta.</small></p>
+    </div>
+    <div class="nav">
+      <button class="btn prev">PREV</button>
+      <button class="btn next">NEXT</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide">
+    <h2>Apa kata customer kami</h2>
+    <div class="review-grid">
+      <img src="Screenshot_2026-01-14-12-32-37-233_com.whatsapp.w4b-edit.jpg">
+      <img src="Screenshot_2026-01-14-12-32-37-233_com.whatsapp.w4b-edit.jpg">
+      <img src="Screenshot_2026-01-14-12-32-37-233_com.whatsapp.w4b-edit.jpg">
+    </div>
+    <div class="nav">
+      <button class="btn prev">PREV</button>
+      <button class="btn next">NEXT</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide">
+    <h2>Hubungi Kami</h2>
+    <p>
+      Nak tahu harga ikut kereta anda?<br>
+      <span>Chat with us on WhatsApp.</span>
+    </p>
+    <a class="wa-main" href="https://wa.me/60167003569" target="_blank">
+      WhatsApp Sekarang
+    </a>
+    <div class="nav">
+      <button class="btn prev">PREV</button>
     </div>
   </section>
 
 </div>
 
-<a class="wa-float" href="https://wa.me/60167003569" target="_blank">
-  WhatsApp Kami
-</a>
+<!-- DOT INDICATOR -->
+<div class="dots" id="dots"></div>
 
+<script src="script.js"></script>
 </body>
 </html>
