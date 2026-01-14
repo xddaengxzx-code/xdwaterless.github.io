@@ -5,15 +5,15 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
   background:#0b0b0b;
   color:#eaeaea;
-  overflow:hidden; /* penting untuk slide */
+  overflow:hidden;
 }
 
 /* SLIDER */
 .slider{
   display:flex;
+  height:100vh;
   overflow-x:auto;
   scroll-snap-type:x mandatory;
-  height:100vh;
 }
 
 /* SLIDE */
@@ -28,8 +28,10 @@ body{
   justify-content:center;
   align-items:center;
   text-align:center;
+  position:relative;
 }
 
+/* IMAGE */
 .slide img{
   max-width:100%;
   height:auto;
@@ -38,8 +40,20 @@ body{
 }
 
 /* TEXT */
-h1{font-size:24px;margin-bottom:6px}
-h2{font-size:20px;margin-bottom:10px}
+h1{
+  font-size:24px;
+  margin-bottom:6px;
+}
+
+h2{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+h3{
+  font-size:16px;
+  margin-bottom:4px;
+}
 
 p{
   font-size:14px;
@@ -47,10 +61,16 @@ p{
   max-width:320px;
 }
 
+p span{
+  color:#888;
+  font-size:13px;
+}
+
+/* LIST */
 ul{
   list-style:none;
   padding:0;
-  margin-top:12px;
+  margin-top:14px;
 }
 
 li{
@@ -62,6 +82,70 @@ li{
   font-size:13px;
 }
 
+/* PACKAGE */
+.package{
+  background:#121212;
+  border:1px solid #1f1f1f;
+  border-radius:14px;
+  padding:12px;
+  margin-bottom:12px;
+}
+
+/* NOTE */
+.note{
+  font-size:12px;
+  color:#999;
+  max-width:320px;
+}
+
+/* WHATSAPP BUTTON */
+.wa-btn{
+  margin-top:16px;
+  padding:14px 20px;
+  border-radius:30px;
+  background:#1a1a1a;
+  border:1px solid #2a2a2a;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* SLIDE HINT */
+.slide-hint{
+  position:absolute;
+  bottom:24px;
+  font-size:12px;
+  color:#888;
+  animation:nudge 1.6s infinite;
+}
+
+@keyframes nudge{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(6px)}
+}
+
+/* DOT INDICATOR */
+.dots{
+  position:fixed;
+  bottom:12px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:6px;
+}
+
+.dots span{
+  width:6px;
+  height:6px;
+  background:#555;
+  border-radius:50%;
+}
+
+.dots span.active{
+  background:#fff;
+}
+
+/* SMALL TEXT */
 small{
   font-size:12px;
   color:#777;
